@@ -1,0 +1,19 @@
+.content{
+    min-height: 100vh;
+    margin-left: 300px;
+    width: calc(100% - 300px);
+}
+
+.content .accueil{
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content .test{
+    height: 400px;
+    width: 100%;
+    background-color: white;
+}
