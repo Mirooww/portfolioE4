@@ -1,18 +1,222 @@
-.content {
-   min-height: 100vh;
-   margin-left: 300px;
-   width: calc(100% - 300px);
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sixtyfour&display=swap');
+
+.corps{
+   width: 100vw;
+   display: flex;
 }
 
-.content .accueil {
+.corps .leftMenuNav{
+   width: 300px;
+}
+.corps .content{
+   margin-left: 300px;
+   width: calc(100% - 300px);
+   box-shadow: 0 0 0 1px red;
+}
+
+
+.content .accueil{
    height: 100vh;
-   width: 100%;
-   background-color: red;
+   box-shadow: 0 0 0 1px red;
    display: flex;
    justify-content: center;
    align-items: center;
 }
-.content .test {
+
+.content .accueil .title{
+   color: #FFF;
+   font-family: 'lato',sans-serif;
+   font-weight: 700;
+   font-size: 50px;
+   letter-spacing: 10px;
+
+
+   background: -webkit-linear-gradient(white, #38495a);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   
+}
+.content .APropos{
+   box-shadow: 0 0 0 1px red;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+
+
+.content .APropos .AProposContainer{
+   height: 100vh;
+   width: 80%;
+   box-shadow: 0 0 0 1px blue;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+
+}
+
+.content .APropos .Cadre{
+   height: 60%;
+   box-shadow: 0 0 0 1px blue;
+   display: flex;
+   flex-direction: column;
+   padding: 30px;
+
+   border-radius: 25px;
+   box-shadow: 0 0 7px 2px rgba(255, 255, 255, 0.5);
+   backdrop-filter: blur(1px);
+   background: linear-gradient(-45deg, rgba(30, 30, 30, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);   
+}
+
+.content .APropos .Cadre .title{
+   height: 50px;
+   color: white;
+}
+
+.content .APropos .Cadre .PresentationBox{
+   height: calc(100vh - 50px);
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   box-shadow: 0 0 0 1px green;
+}
+
+.PresentationBox .picturesFrame{
+   width: 30%;
+   box-shadow: 0 0 0 1px yellow;
+   height: 80%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+}
+
+.PresentationBox .picturesFrame img{
+   width: 70%;
+   border-radius: 50%;
+
+}
+
+.PresentationBox .PresentationContent{
+   width: 60%;
+   box-shadow: 0 0 0 1px blue;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   height: 80%;
+   position: relative;
+   font-family: 'Poppins', sans-serif;
+
+}
+
+.PresentationBox .PresentationContent h2{
+   color: #fff;
+   font-size: 32px;
+   font-weight: 700;
+}
+
+.PresentationBox .PresentationContent p{
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+}
+
+.PresentationBox .PresentationContent p:last-child{
+   color: red;
+   font-size: 18px;
+   font-weight: 500;
+   text-align: center;
+}
+
+.PresentationBox .PresentationContent .cvContainer{
+   height: 100px;
    width: 100%;
-   background-color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+} 
+
+.cvContainer .cv{
+   height: 50%;
+   width: 150px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 15px;
+   box-shadow: 0 0 0 1px;
+   color: #FFF;
+   position: relative; 
+   overflow: hidden; 
+   transition: color 0.5s ease; 
+
+}
+.cvContainer .cv:hover {
+   color: #000; 
+}
+.cvContainer .cv::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 0;
+   height: 100%;
+   background-color: #3498db; 
+   transition: width 0.5s ease; 
+   border-radius: 15px; 
+   color: #000; 
+
+}
+
+.cvContainer .cv:hover::before {
+   width: 100%; 
+   color: #000; 
+
+
+}
+
+.cvContainer .cv h2{
+   position: absolute;
+   z-index: 9999;
+   text-align: center;
+   transition: color 0.1s ease; 
+   color: inherit; 
+}
+
+.cvContainer .cv:hover h2 {
+   color: #000; 
+}
+
+.content .APropos .BtsSIO{
+   height: 60vh;
+   box-shadow: 0 0 0 1px violet;
+   width: 80%;
+   box-shadow: 0 0 0 1px blue;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   flex-direction: column;
+   color: white;
+}
+
+.content .APropos .BtsSIO p{
+   font-size: 22px;
+}
+.content .APropos .BtsSIO .containerBTS{
+   display: flex;
+   width: 80%;
+   box-shadow: 0 0 0 1px;
+}
+.content .APropos .BtsSIO .containerBTS p{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 50%;
+   margin: 0 25px;
+   font-size: 18px;
+   font-weight: 400;
+}
+
+
+ .test{
+   height: 100vh;
 }
