@@ -10,7 +10,6 @@ import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import { formation } from "./json/Projets";
 
-import fetchJson from "./hooks/fetchJson";
 import getFormation from "./hooks/getFormation";
 function MainPage() {
     return (
