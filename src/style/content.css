@@ -5,19 +5,19 @@
    display: flex;
 }
 
+
+
 .corps .leftMenuNav{
    width: 300px;
 }
 .corps .content{
    margin-left: 300px;
    width: calc(100% - 300px);
-   box-shadow: 0 0 0 1px red;
 }
 
 
 .content .accueil{
    height: 100vh;
-   box-shadow: 0 0 0 1px red;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -37,7 +37,6 @@
    
 }
 .content .APropos{
-   box-shadow: 0 0 0 1px red;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -47,8 +46,7 @@
 
 .content .APropos .AProposContainer{
    height: 100vh;
-   width: 80%;
-   box-shadow: 0 0 0 1px blue;
+   width: 90%;
    display: flex;
    justify-content: center;
    flex-direction: column;
@@ -57,10 +55,10 @@
 
 .content .APropos .Cadre{
    height: 60%;
-   box-shadow: 0 0 0 1px blue;
    display: flex;
    flex-direction: column;
    padding: 30px;
+   min-height: 500px;
 
    border-radius: 25px;
    box-shadow: 0 0 7px 2px rgba(255, 255, 255, 0.5);
@@ -78,12 +76,10 @@
    display: flex;
    justify-content: space-around;
    align-items: center;
-   box-shadow: 0 0 0 1px green;
 }
 
 .PresentationBox .picturesFrame{
    width: 30%;
-   box-shadow: 0 0 0 1px yellow;
    height: 80%;
    display: flex;
    justify-content: center;
@@ -99,7 +95,6 @@
 
 .PresentationBox .PresentationContent{
    width: 60%;
-   box-shadow: 0 0 0 1px blue;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
@@ -143,15 +138,18 @@
    justify-content: center;
    align-items: center;
    border-radius: 15px;
-   box-shadow: 0 0 0 1px;
    color: #FFF;
    position: relative; 
    overflow: hidden; 
    transition: color 0.5s ease; 
+   box-shadow: 0 0 0 1px white;
+
 
 }
 .cvContainer .cv:hover {
    color: #000; 
+   box-shadow: none;
+
 }
 .cvContainer .cv::before {
    content: '';
@@ -186,37 +184,94 @@
    color: #000; 
 }
 
+
+
+
+
 .content .APropos .BtsSIO{
    height: 60vh;
-   box-shadow: 0 0 0 1px violet;
-   width: 80%;
-   box-shadow: 0 0 0 1px blue;
+   z-index: 999;
+   min-height: 650px;
+   width: 100%;
    display: flex;
    justify-content: space-around;
    align-items: center;
    flex-direction: column;
    color: white;
+   background-color: #00000077;
+   padding: 25px 15%;
+}
+.BtsSIO h1{
+   font-size: 36px;
+}
+.BtsSIO h3 {
+   font-size: 30px;
+   text-align: left;
+   width: 100%;
 }
 
-.content .APropos .BtsSIO p{
+.BtsSIO p{
    font-size: 22px;
 }
-.content .APropos .BtsSIO .containerBTS{
+
+
+.BtsSIO .OptionContainer{
    display: flex;
-   width: 80%;
-   box-shadow: 0 0 0 1px;
+   height: 50%;
 }
-.content .APropos .BtsSIO .containerBTS p{
+.BtsSIO .TopContainer{
+   height: 40%;
    display: flex;
-   justify-content: center;
+   flex-direction: column;
    align-items: center;
-   width: 50%;
-   margin: 0 25px;
-   font-size: 18px;
-   font-weight: 400;
+   justify-content: space-between;
 }
 
 
- .test{
-   height: 100vh;
+.OptionContainer .option { 
+   margin-bottom: 20px; 
+}
+.option h2 { 
+   color: #fff; 
+   height: 15%; 
+   font-weight: 700; 
+   padding-bottom: 50px; 
+}
+
+.option p {
+   height:  60%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.option ul { 
+   height: 40%;
+   list-style: none; 
+   padding: 0; 
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+.option li { 
+   margin-bottom: 5px; 
+   text-align: center;
+}
+.option li:before { 
+   content: "✅"; 
+   margin-right: 5px; 
+}
+
+
+
+.projets{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 60px 0px;
+}
+
+.projets h1{
+   color: #FFF;
 }

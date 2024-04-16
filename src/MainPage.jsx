@@ -81,40 +81,51 @@ function MainPage() {
                         </div>
                     </div>
                     <div className="BtsSIO">
-                        <h1> Qu'est-ce-que le BTS SIO</h1>
-                        <div>
-                            {" "}
+                        <div className="TopContainer">
+                            <h1>Qu'est-ce que le BTS SIO ?</h1>
                             <p>
-                                Le BTS Services Informatiques aux Organisations (SIO) est un diplôme qui prépare en deux ans aux carrières dans l’informatique,
-                                soit en tant qu’administrateur réseau, soit en tant que développeur.
+                                Le Brevet de Technicien Supérieur aux Services Informatiques aux Organisations (BTS SIO), s'adresse à ceux qui souhaitent se
+                                former en deux ans aux métiers d'administrateur réseau ou de développeur. Pour par la suite intégré directement le marché du
+                                travail ou continuer des études, dans le domaine de l'informatique.
                             </p>
-                            <p>
-                                Ce cursus est idéal pour ceux qui visent une insertion professionnelle rapide ou qui envisagent de poursuivre leurs études dans
-                                le secteur informatique.
-                            </p>
-                            <p>Le programme du BTS SIO se divise en deux options :</p>
+                            <h3>Le BTS SIO propose deux spécialités :</h3>
                         </div>
 
-                        <div className="containerBTS">
-                            <p>
-                                Option SISR (Solutions d’Infrastructure, Systèmes et Réseaux) : Cette spécialité vise à former des experts en réseaux et
-                                systèmes informatiques, couvrant l’installation, la maintenance et la sécurité. Les diplômés de cette option sont qualifiés pour
-                                administrer et sécuriser les réseaux d’entreprise. Les carrières accessibles incluent : Administrateur de systèmes et réseaux
-                                Technicien support et déploiement Responsable d’exploitation Technicien support systèmes et réseaux Technicien d’infrastructure
-                                Technicien de production
-                            </p>
-                            <p>
-                                Technicien micro et réseaux Option SLAM (Solutions Logicielles et Applications Métiers) : Cette spécialité, que vous avez
-                                choisie, forme des professionnels du logiciel, de la conception à l’intégration en entreprise, en passant par la rédaction de
-                                spécifications et le développement. Les métiers envisageables pour les diplômés SLAM sont : Développeur d’applications
-                                informatiques Développeur Analyste d’applications ou d’études Analyste programmeur Programmeur analyste Programmeur
-                                d’applications Responsable des services applicatifs Technicien d’études informatiques Le BTS SIO offre ainsi une formation
-                                solide pour ceux qui aspirent à évoluer dans le domaine dynamique et en constante évolution de l’informatique.
-                            </p>
+                        <div className="OptionContainer">
+                            <div className="option">
+                                <h2>🖥️ Option SISR</h2>
+                                <p>
+                                    L’option Solution d’infrastructure, systèmes et réseaux forme des professionnels des réseaux et équipements informatiques
+                                    (installation, maintenance, sécurité). En sortant d’un BTS SIO SISR, vous serez capables de gérer et d’administrer le réseau
+                                    d’une société et d’assurer sa sécurité et sa maintenance. Les techniciens supérieurs en informatique option SISR, peuvent
+                                    accéder aux métiers de : .
+                                </p>
+                                <ul>
+                                    <li>Administrateur systèmes et réseaux</li>
+                                    <li>Informaticien support et déploiement</li>
+                                    <li>Pilote exploitation</li>
+                                </ul>
+                            </div>
+                            <div className="option">
+                                <h2>🖥️ Option SLAM</h2>
+                                <p>
+                                    L’option Solutions logicielles et applications métiers forme des spécialistes des logiciels (rédaction d’un cahier des
+                                    charges, formulation des besoins et spécifications, développement, intégration au sein de la société). Les techniciens
+                                    supérieurs en informatique option SLAM, sont préparés aux métiers de :{" "}
+                                </p>
+                                <ul>
+                                    <li>Développeur d'applications</li>
+                                    <li>Concepteur d'applications</li>
+                                    <li>Analyste programmeur</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div className="test">{getFormation(formation)}</div>
+                <div className="projets">
+                    <h1> Liste des projets</h1>
+                    {getFormation(formation)}
+                </div>
             </div>
         </div>
     );
