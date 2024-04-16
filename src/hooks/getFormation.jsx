@@ -6,6 +6,8 @@ export default function getFormation(linkApi) {
     const [formations, setFormations] = useState([]);
     const [selectedCompetence, setSelectedCompetence] = useState(null);
     const [hoveredId, setHoveredId] = useState(null);
+    const [showModal, setShowModal] = useState(false);
+    const [selectedFormation, setSelectedFormation] = useState([]);
 
     useEffect(() => {
         const fetchFormations = async () => {
@@ -36,6 +38,11 @@ export default function getFormation(linkApi) {
     const handleVoirToutClick = () => {
         setSelectedButtonIndex(null);
         setSelectedCompetence(null);
+    };
+
+    const toggleModal = (formation) => {
+        setShowModal(!showModal);
+        setSelectedFormation(formation);
     };
     return (
         <div style={{ boxShadow: "0 0 0 1px", width: "100%", display: "flex", justifyContent: "space-around", padding: "0 50px" }}>
@@ -109,6 +116,7 @@ export default function getFormation(linkApi) {
                         className="shadow2"
                         onMouseEnter={() => setHoveredId(formation.id)}
                         onMouseLeave={() => setHoveredId(null)}
+                        onClick={() => toggleModal(formation)}
                     >
                         <div style={{ height: "20%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-around" }}>
                             <h2 style={{ textAlign: "center", fontSize: "20px" }}>{formation.title}</h2>
@@ -134,6 +142,61 @@ export default function getFormation(linkApi) {
                     </div>
                 ))}
             </div>
+            {showModal && (
+                <div style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", backgroundColor: "rgba(0, 0, 0, 0.5)", zIndex: "9999" }}>
+                    <div
+                        style={{
+                            position: "absolute",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%)",
+                            backgroundColor: "rgba(0, 0, 0, 0.7)",
+                            padding: "20px",
+                            height: "60%",
+                            width: "70%",
+                            overflow: "auto", // Ajout pour permettre le défilement si le contenu est trop grand
+                            color: "white",
+                        }}
+                        className="shadow2"
+                    >
+                        {selectedFormation && ( // Vérifie si selectedFormation existe
+                            <>
+                                <div style={{ height: "20%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-around" }}>
+                                    <h2 style={{ textAlign: "center", fontSize: "20px" }}>{selectedFormation.title}</h2>
+                                    <p>{selectedFormation.startdate}</p>
+                                </div>
+
+                                <div style={{ height: "80%" }}>
+                                    <div style={{ height: "60%" }}>
+                                        <img src="" alt="" />
+                                    </div>
+                                    <button onClick={toggleModal}>Fermer</button>
+
+                                    <div
+                                        style={{
+                                            height: "40%",
+                                            display: "flex",
+                                            flexDirection: "column",
+                                            alignItems: "center",
+                                            justifyContent: "space-around",
+                                        }}
+                                    >
+                                        <div>{selectedFormation.description}</div>
+                                        <div style={{ boxShadow: "0 0 0 1px", width: "99%", display: "flex", justifyContent: "space-around" }}>
+                                            {selectedFormation.competences.map((formationCompetences, index) => (
+                                                <p key={index} style={{ width: "300px", boxShadow: "0 0 0 1px", textAlign: "center" }}>
+                                                    {formationCompetences.nom}
+                                                </p>
+                                            ))}
+                                        </div>
+                                        <p>{selectedFormation.enddate}</p>
+                                    </div>
+                                </div>
+                            </>
+                        )}
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

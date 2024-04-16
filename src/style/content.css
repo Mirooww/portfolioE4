@@ -174,7 +174,7 @@
 
 .cvContainer .cv h2{
    position: absolute;
-   z-index: 9999;
+   z-index: 50;
    text-align: center;
    transition: color 0.1s ease; 
    color: inherit; 
@@ -190,7 +190,7 @@
 
 .content .APropos .BtsSIO{
    height: 60vh;
-   z-index: 999;
+   z-index: 10;
    min-height: 650px;
    width: 100%;
    display: flex;
