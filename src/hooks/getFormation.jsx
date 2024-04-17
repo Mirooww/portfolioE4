@@ -121,7 +121,7 @@ export default function getFormation(linkApi) {
                justifyContent: "space-around",
                alignItems: "flex-start",
                gap: "30px",
-               width: "calc(90% - 300px)",
+               width: openCategNav ? "calc(90% - 300px)" : "90%",
                color: "white",
                padding: "40px 0px",
             }}
