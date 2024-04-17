@@ -151,6 +151,18 @@
    padding: 20px;
 }
 
+
+.Categs {
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.02); /* Effet d'ombre standard */
+   transition: 0.3s; /* Transition douce pour l'effet au survol */
+   padding: 10px;
+   border-radius: 5px;
+ }
+ 
+ .Categs:hover {
+   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19); /* Effet d'ombre plus prononcé au survol */
+ }
+
 /* .main .accueil {
    height: 100vh;
    display: flex;
