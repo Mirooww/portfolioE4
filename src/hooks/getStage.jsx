@@ -46,7 +46,8 @@ export default function getStage() {
                             alignItems: "center",
                             minHeight: "300px",
 
-                            flexDirection: item.inverse ? "row-reverse" : isFlex ? "row" : "column", // Ici, on change l'ordre si inverse est true
+                            // flexDirection: item.inverse ? "row-reverse" : "row",
+                            flexDirection: isFlex ? "row" : "column",
                             margin: "0",
                             padding: "0",
                             width: "100%",
