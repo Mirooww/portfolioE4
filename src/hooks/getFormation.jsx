@@ -3,6 +3,9 @@ import axios from "axios";
 import "../style/app.css";
 import { motion, useCycle } from "framer-motion";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark, faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+
 export default function getFormation(linkApi) {
    const [formations, setFormations] = useState([]);
    const [selectedCompetence, setSelectedCompetence] = useState(null);
@@ -71,7 +74,7 @@ export default function getFormation(linkApi) {
       },
    };
    return (
-      <div style={{ boxShadow: "0 0 0 1px", width: "100%", display: "flex", justifyContent: "space-around", padding: "0 15px" }}>
+      <div style={{ width: "100%", display: "flex", justifyContent: "space-around", padding: "0 15px" }}>
          {openCategNav && (
             <motion.div
                style={{
@@ -135,11 +138,14 @@ export default function getFormation(linkApi) {
                color: "white",
                padding: "40px 0px",
                position: "relative",
+               marginTop: "30px",
             }}
          >
-            <button onClick={cycleOpenCategNav} style={{ position: "absolute", top: "10px", left: "10px" }}>
-               {openCategNav ? "Close" : "Open"}
-            </button>
+            <FontAwesomeIcon
+               icon={openCategNav ? faArrowLeft : faArrowRight}
+               onClick={cycleOpenCategNav}
+               style={{ position: "absolute", top: "0px", left: "10px", height: "30px", width: "30px" }}
+            />
             {filteredFormations.map((formation) => (
                <div
                   key={formation.id}
@@ -214,9 +220,11 @@ export default function getFormation(linkApi) {
                            <div style={{ height: "60%" }}>
                               <img src="" alt="" />
                            </div>
-                           <button onClick={toggleModal} style={{ position: "absolute", top: "15px", left: "15px" }}>
-                              Fermer
-                           </button>
+                           <FontAwesomeIcon
+                              icon={faXmark}
+                              onClick={toggleModal}
+                              style={{ position: "absolute", top: "15px", right: "15px", height: "50px", width: "50px" }}
+                           />
 
                            <div
                               style={{

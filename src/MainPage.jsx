@@ -6,10 +6,11 @@ import "./style/stars.sass";
 
 import { Link, animateScroll as scroll } from "react-scroll";
 
-import { motion, useCycle } from "framer-motion";
+import { color, motion, useCycle } from "framer-motion";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFile } from "@fortawesome/free-regular-svg-icons";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import { formation } from "./json/Projets";
@@ -88,9 +89,12 @@ function MainPage() {
             <div id="stars3"></div>
             <div className="container" id="accueil">
                <h1 className="BigTitle">BIENVENUE SUR MON PORTFOLIO</h1>
-               <button onClick={cycleOpenSideNav} style={{ position: "fixed", top: "20px", right: "20px" }}>
-                  {openSideNav ? "Close" : "Open"}
-               </button>
+
+               <FontAwesomeIcon
+                  icon={faBars}
+                  onClick={cycleOpenSideNav}
+                  style={{ position: "fixed", top: "20px", left: openSideNav ? "310px" : "20px", height: "50px", width: "50px", zIndex: "9999" }}
+               />
             </div>
             <div className="containerColumn" id="a_propos">
                <div className="cadre" style={{ margin: "50px 0px" }}>
