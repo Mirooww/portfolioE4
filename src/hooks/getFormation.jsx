@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "../style/app.css";
 import { motion, useCycle } from "framer-motion";
+
 export default function getFormation(linkApi) {
    const [formations, setFormations] = useState([]);
    const [selectedCompetence, setSelectedCompetence] = useState(null);
@@ -24,6 +25,8 @@ export default function getFormation(linkApi) {
       fetchFormations();
    }, []);
 
+   const formationsRef = useRef(null); // Référence à la div contenant les formations
+
    const competences = [...new Set(formations.flatMap((formation) => formation.competences.map((c) => c.nom)))];
 
    const filteredFormations = selectedCompetence
@@ -35,11 +38,17 @@ export default function getFormation(linkApi) {
    const handleButtonClick = (index) => {
       setSelectedButtonIndex(index);
       setSelectedCompetence(competences[index]);
+
+      // Faites défiler vers le haut de la div contenant les formations
+      formationsRef.current.scrollIntoView({ behavior: "instant" });
    };
 
    const handleVoirToutClick = () => {
       setSelectedButtonIndex(null);
       setSelectedCompetence(null);
+
+      // Faites défiler vers le haut de la div contenant les formations
+      formationsRef.current.scrollIntoView({ behavior: "instant" });
    };
 
    const toggleModal = (formation) => {
@@ -74,7 +83,6 @@ export default function getFormation(linkApi) {
                   height: "600px",
                   justifyContent: "center",
                   alignItems: "center",
-                  boxShadow: "0 0 0 1px",
                }}
                className="shadow2"
                initial="closed"
@@ -116,16 +124,16 @@ export default function getFormation(linkApi) {
             </motion.div>
          )}
          <div
+            ref={formationsRef} // Référence à la div contenant les formations
             style={{
                display: "flex",
                flexWrap: "wrap",
                justifyContent: "space-around",
                alignItems: "flex-start",
-               gap: "30px",
+               gap: "50px",
                width: openCategNav ? "calc(90% - 300px)" : "90%",
                color: "white",
                padding: "40px 0px",
-               boxShadow: "0 0 0 1px",
                position: "relative",
             }}
          >

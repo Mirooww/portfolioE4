@@ -4,6 +4,8 @@ import "./style/app.css";
 import "./style/content.css";
 import "./style/stars.sass";
 
+import { Link, animateScroll as scroll } from "react-scroll";
+
 import { motion, useCycle } from "framer-motion";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -32,10 +34,16 @@ function MainPage() {
       },
    };
 
+   const scrollToSection = (id) => {
+      scroll.scrollTo(id, {
+         duration: 800,
+         smooth: "easeInOutQuart",
+      });
+   };
    return (
       <div className="body">
          {openSideNav && (
-            <motion.div className="leftMenuNav" initial="closed" animate="open" variants={sideVariants}>
+            <motion.div className="leftMenuNav" initial="closed" animate="open" variants={sideVariants} style={{ color: "black" }}>
                <header>
                   <div className="PPFrame">
                      <img src="/pictures/PP.jpeg" alt="photo_profil" />
@@ -55,11 +63,18 @@ function MainPage() {
                   </div>
                </header>
                <nav>
-                  <div>Accueil</div>
-                  <div>A Propos</div>
-                  <div>Parcours</div>
-                  <div>Epreuve E4</div>
-                  <div>Contact</div>
+                  <Link to="accueil" smooth={true} duration={800} onClick={() => scrollToSection("accueil")}>
+                     Accueil
+                  </Link>
+                  <Link to="a_propos" smooth={true} duration={800} onClick={() => scrollToSection("a_propos")}>
+                     A Propos
+                  </Link>
+                  <Link to="parcours" smooth={true} duration={800} onClick={() => scrollToSection("parcours")}>
+                     Parcours
+                  </Link>
+                  <Link to="competences" smooth={true} duration={800} onClick={() => scrollToSection("competences")}>
+                     Compétences
+                  </Link>
                </nav>
                <footer>
                   <p> COPYRIGHT 2024 @Nexum</p>
@@ -71,13 +86,13 @@ function MainPage() {
             <div id="stars"></div>
             <div id="stars2"></div>
             <div id="stars3"></div>
-            <div className="container">
+            <div className="container" id="accueil">
                <h1 className="BigTitle">BIENVENUE SUR MON PORTFOLIO</h1>
-               <button onClick={cycleOpenSideNav} style={{ position: "absolute", top: "20px", right: "20px" }}>
+               <button onClick={cycleOpenSideNav} style={{ position: "fixed", top: "20px", right: "20px" }}>
                   {openSideNav ? "Close" : "Open"}
                </button>
             </div>
-            <div className="containerColumn">
+            <div className="containerColumn" id="a_propos">
                <div className="cadre" style={{ margin: "50px 0px" }}>
                   <h1>A Propos</h1>
                   <div className="flex contentCadre">
@@ -145,12 +160,88 @@ function MainPage() {
                   </div>
                </div>
             </div>
-            <div className="projets">
-               <h1> Liste des projets</h1>
+            <div className="projets" id="parcours">
+               <h1 style={{ textAlign: "center" }}> Liste des projets</h1>
 
                {getFormation(formation)}
             </div>
-            <div className="contentLine"></div>
+            <div className="cadreLine flexCentered" style={{ padding: "100px 0", flexDirection: "column" }} id="competences">
+               <h1> Compétences </h1>
+               <div style={{ flexWrap: "wrap", width: "60%", justifyContent: "space-around" }} className="flexCentered">
+                  <motion.div
+                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px" }}
+                     className="shadow2 flexCentered"
+                     whileHover={{ scale: [null, 1.5, 1.4] }}
+                     transition={{ duration: 0.3 }}
+                  >
+                     1
+                  </motion.div>
+                  <motion.div
+                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px" }}
+                     className="shadow2 flexCentered"
+                     whileHover={{ scale: [null, 1.5, 1.4] }}
+                     transition={{ duration: 0.3 }}
+                  >
+                     1
+                  </motion.div>
+                  <motion.div
+                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px" }}
+                     className="shadow2 flexCentered"
+                     whileHover={{ scale: [null, 1.5, 1.4] }}
+                     transition={{ duration: 0.3 }}
+                  >
+                     1
+                  </motion.div>
+                  <motion.div
+                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px" }}
+                     className="shadow2 flexCentered"
+                     whileHover={{ scale: [null, 1.5, 1.4] }}
+                     transition={{ duration: 0.3 }}
+                  >
+                     1
+                  </motion.div>
+                  <motion.div
+                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px" }}
+                     className="shadow2 flexCentered"
+                     whileHover={{ scale: [null, 1.5, 1.4] }}
+                     transition={{ duration: 0.3 }}
+                  >
+                     1
+                  </motion.div>
+                  <motion.div
+                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px" }}
+                     className="shadow2 flexCentered"
+                     whileHover={{ scale: [null, 1.5, 1.4] }}
+                     transition={{ duration: 0.3 }}
+                  >
+                     1
+                  </motion.div>
+                  <motion.div
+                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px" }}
+                     className="shadow2 flexCentered"
+                     whileHover={{ scale: [null, 1.5, 1.4] }}
+                     transition={{ duration: 0.3 }}
+                  >
+                     1
+                  </motion.div>
+                  <motion.div
+                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px" }}
+                     className="shadow2 flexCentered"
+                     whileHover={{ scale: [null, 1.5, 1.4] }}
+                     transition={{ duration: 0.3 }}
+                  >
+                     1
+                  </motion.div>
+                  <motion.div
+                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px" }}
+                     className="shadow2 flexCentered"
+                     whileHover={{ scale: [null, 1.5, 1.4] }}
+                     transition={{ duration: 0.3 }}
+                  >
+                     1
+                  </motion.div>
+               </div>
+            </div>
          </div>
       </div>
    );

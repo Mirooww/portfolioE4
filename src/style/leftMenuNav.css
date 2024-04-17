@@ -1,62 +1,62 @@
-.leftMenuNav{
-    width: 300px;
-    height: 100vh;
-    box-shadow: 0 0 0 1px;
-    position: fixed;
-    background-color: rgb(255, 255, 255);
+.leftMenuNav {
+   width: 300px;
+   height: 100vh;
+   box-shadow: 0 0 0 1px;
+   position: fixed;
+   background-color: #fffafa;
 }
 
-.leftMenuNav header{
-    height: 33%;
-    box-shadow: 0 0 0 1px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;  
-    justify-content: space-around;  
+.leftMenuNav header {
+   height: 33%;
+   box-shadow: 0 0 0 1px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
 }
-.leftMenuNav header .PPFrame{
-    height: 120px;
-    width: 120px;
-    border-radius: 100%;
-    object-fit: cover;
-    overflow: hidden; /* Cache tout contenu qui dépasse du cadre */
+.leftMenuNav header .PPFrame {
+   height: 120px;
+   width: 120px;
+   border-radius: 100%;
+   object-fit: cover;
+   overflow: hidden; /* Cache tout contenu qui dépasse du cadre */
 }
-.leftMenuNav header .PPFrame img{
-    height: 100%;
-    object-fit: cover; /* Empêche l'image de déborder */
+.leftMenuNav header .PPFrame img {
+   height: 100%;
+   object-fit: cover; /* Empêche l'image de déborder */
 }
 
-.leftMenuNav header .name{
-    box-shadow: 0 0 0 1px;
+.leftMenuNav header .name {
+   box-shadow: 0 0 0 1px;
 }
-.leftMenuNav header .social{
-    box-shadow: 0 0 0 1px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 70%;
+.leftMenuNav header .social {
+   box-shadow: 0 0 0 1px;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   width: 70%;
 }
 .leftMenuNav header .social div {
-    box-shadow: 0 0 0 1px;
-    height: 30px;
-    width: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
+   box-shadow: 0 0 0 1px;
+   height: 30px;
+   width: 30px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 100%;
 }
-.leftMenuNav nav{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    height: 60%;
-    box-shadow: 0 0 0 1px red;
+.leftMenuNav nav {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+   height: 60%;
+   box-shadow: 0 0 0 1px red;
 }
-.leftMenuNav footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 7%;
-    box-shadow: 0 0 0 1px blue;
+.leftMenuNav footer {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 7%;
+   box-shadow: 0 0 0 1px blue;
 }
