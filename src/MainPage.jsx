@@ -63,6 +63,7 @@ function MainPage() {
     const [parcoursRef, parcoursInView] = useInView({ threshold: 0.5 });
     const [competencesRef, competencesInView] = useInView({ threshold: 0.5 });
     const [stageRef, stageInView] = useInView({ threshold: 0.5 });
+    const [veilleRef, veilleInView] = useInView({ threshold: 0.5 });
 
     const toggleSideNav = () => {
         setOpenSideNav(!openSideNav);
@@ -150,6 +151,16 @@ function MainPage() {
                             style={{ fontSize: "24px", fontWeight: "700", color: stageInView ? "red" : "black" }}
                         >
                             Stages
+                        </Link>
+                        <Link
+                            to="veille"
+                            smooth={true}
+                            duration={800}
+                            onClick={() => scrollToSection("veille")}
+                            className={activeSection === "competences" ? "active" : "Categs"}
+                            style={{ fontSize: "24px", fontWeight: "700", color: veilleInView ? "red" : "black" }}
+                        >
+                            Veilles
                         </Link>
                         <div
                             onClick={toggleModalExcel}
@@ -355,6 +366,126 @@ function MainPage() {
                 </div>
                 <div className="containerColumn" id="stage" ref={stageRef}>
                     {getStage()}
+                </div>
+                <div className="cadreLine containerColumn" id="veille" ref={veilleRef}>
+                    <h1 style={{ padding: "40px 0px" }}>Veilles technologiques</h1>
+                    <h3 style={{ padding: "40px 0px" }}>Mon sujet : L'IA dans l'espace</h3>
+
+                    <p style={{ width: "90%", textAlign: "center" }}>
+                        L'intelligence artificielle (IA) transforme profondément l'exploration spatiale, offrant des capacités améliorées pour la gestion des
+                        missions, l'analyse des données, et la conception technologique. Voici une exploration plus détaillée et reformulée des applications de
+                        l'IA dans l'espace :
+                    </p>
+                    <div style={{ display: "flex", flexWrap: "wrap", width: "90%", justifyContent: "space-around", padding: "40px 0px" }}>
+                        <div
+                            style={{
+                                width: "350px",
+                                minHeight: "350px",
+
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "space-around",
+                            }}
+                        >
+                            <h1 style={{ textAlign: "center" }}>Analyse de Données</h1>
+                            <p>
+                                L'espace est une source inépuisable de données, allant des images capturées par les télescopes aux signaux recueillis par les
+                                satellites. L'IA excelle dans la gestion de ces vastes volumes de données, offrant des capacités d'analyse avancées qui
+                                permettent de découvrir de nouvelles exoplanètes, d'étudier des phénomènes astrophysiques complexes, et de cartographier des
+                                galaxies lointaines. Cette technologie accélère le traitement des données, libérant ainsi les astronomes des contraintes de
+                                l'analyse manuelle et leur permettant de se concentrer sur des questions scientifiques plus profondes.
+                            </p>
+                        </div>
+                        <div
+                            style={{
+                                width: "350px",
+                                minHeight: "350px",
+
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "space-around",
+                            }}
+                        >
+                            <h1 style={{ textAlign: "center" }}>Navigation Autonome</h1>
+                            <p>
+                                Dans l'environnement inexploré et souvent dangereux de l'espace, l'IA fournit des solutions critiques pour la navigation
+                                autonome des vaisseaux spatiaux. Elle planifie les trajectoires, optimise les parcours en tenant compte des limitations de
+                                carburant et de temps, et effectue un évitement dynamique des obstacles. Ce niveau d'autonomie est crucial, notamment pour
+                                l'exploration de surfaces planétaires hostiles ou pour les manœuvres autour des astéroïdes.
+                            </p>
+                        </div>
+                        <div
+                            style={{
+                                width: "350px",
+                                minHeight: "350px",
+
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "space-around",
+                            }}
+                        >
+                            <h1 style={{ textAlign: "center" }}>Maintenance Prédictive</h1>
+                            <p>
+                                L'IA augmente la fiabilité des missions spatiales grâce à la maintenance prédictive. En analysant continuellement les données
+                                issues des capteurs des vaisseaux, l'IA peut prévoir les défaillances avant qu'elles ne surviennent, permettant ainsi des
+                                interventions de maintenance proactives qui minimisent les risques d'interruption critique et prolongent la durée de vie des
+                                équipements spatiaux.
+                            </p>
+                        </div>
+                        <div
+                            style={{
+                                width: "350px",
+                                minHeight: "350px",
+
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "space-around",
+                            }}
+                        >
+                            <h1 style={{ textAlign: "center" }}>Découverte de Planètes</h1>
+                            <p>
+                                L'IA aide les scientifiques à détecter et à analyser des exoplanètes potentiellement habitables. Elle traite et interprète les
+                                signaux faibles captés par les télescopes pour identifier des planètes en orbite autour d'étoiles distantes. De plus, elle
+                                analyse les données atmosphériques et les caractéristiques physiques pour évaluer l'habitabilité des planètes découvertes
+                            </p>
+                        </div>
+                        <div
+                            style={{
+                                width: "350px",
+                                minHeight: "350px",
+
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "space-around",
+                            }}
+                        >
+                            <h1 style={{ textAlign: "center" }}>Conception de Vaisseaux Spatiaux</h1>
+                            <p>
+                                L'IA joue un rôle transformateur dans la conception de vaisseaux spatiaux. Elle utilise des algorithmes d'optimisation pour
+                                développer des designs qui maximisent l'efficacité du carburant et minimisent le poids, tout en assurant la robustesse
+                                nécessaire pour survivre aux conditions extrêmes de l'espace. De plus, l'IA aide à développer de nouveaux matériaux adaptés aux
+                                défis spécifiques des voyages spatiaux.
+                            </p>
+                        </div>
+                        <div
+                            style={{
+                                width: "350px",
+                                minHeight: "350px",
+
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "space-around",
+                            }}
+                        >
+                            <h1 style={{ textAlign: "center" }}>Perspectives Futures</h1>
+                            <p>
+                                Avec l'avancée continue de l'IA, l'avenir de l'exploration spatiale semble prometteur. On envisage des missions habitées plus
+                                sûres et plus efficaces vers Mars et au-delà, l'exploitation des astéroïdes pour des ressources précieuses, et la construction
+                                de bases autonomes sur des corps célestes comme la Lune ou Mars. L'IA continuera d'être un pilier central dans la réalisation de
+                                ces objectifs ambitieux, poussant les frontières de ce que l'humanité peut atteindre dans l'espace.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
             {showModal && (
