@@ -39,6 +39,7 @@
    align-items: center;
    width: 90%;
 }
+.leftMenuNav header .social a,
 .leftMenuNav header .social div {
    box-shadow: 0 0 0 1px;
    height: 40px;
@@ -47,6 +48,7 @@
    justify-content: center;
    align-items: center;
    border-radius: 100%;
+   color: black;
 }
 .leftMenuNav nav {
    padding: 15px;

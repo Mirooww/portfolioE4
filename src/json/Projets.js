@@ -5,7 +5,7 @@ export const formation = [
         description: "Projet de réseau pour la mise en place d'un serveur de fichier et d'un serveur web",
         startdate: "Janvier 2019",
         enddate: "Février 2019",
-        stage: "non",
+
         competences: [
             {
                 nom: "Gérer le patrimoine informatique",
@@ -31,7 +31,7 @@ export const formation = [
         description: "Developpement d'un programme de gestion de stock en POO",
         startdate: "Janvier 2019",
         enddate: "Février 2019",
-        stage: "non",
+
         competences: [
             {
                 nom: "Gérer le patrimoine informatique",
@@ -61,7 +61,7 @@ export const formation = [
         description: "Developpement d'un site web pour une association",
         startdate: "Janvier 2019",
         enddate: "Février 2019",
-        stage: "non",
+
         competences: [
             {
                 nom: "Gérer le patrimoine informatique",
@@ -96,7 +96,7 @@ export const formation = [
         description: "Developpement d'un agenda en ligne",
         startdate: "Janvier 2019",
         enddate: "Février 2019",
-        stage: "non",
+
         competences: [
             {
                 nom: "Gérer le patrimoine informatique",
@@ -121,7 +121,7 @@ export const formation = [
         description: "Developpement d'un programme d'envoi d'email",
         startdate: "Janvier 2019",
         enddate: "Février 2019",
-        stage: "non",
+
         competences: [
             {
                 nom: "Développer la présence en ligne de l’organisation",
@@ -136,7 +136,7 @@ export const formation = [
         description: "Developpement d'un jeu d'echec en python",
         startdate: "Janvier 2019",
         enddate: "Février 2019",
-        stage: "non",
+
         competences: [
             {
                 nom: "Gérer le patrimoine informatique",
@@ -161,7 +161,7 @@ export const formation = [
         description: "Developpement d'un site web pour un portfolio",
         startdate: "Janvier 2019",
         enddate: "Février 2019",
-        stage: "non",
+
         competences: [
             {
                 nom: "Gérer le patrimoine informatique",
@@ -186,7 +186,7 @@ export const formation = [
         description: "Developpement d'un site web pour un restaurant chinois",
         startdate: "Janvier 2019",
         enddate: "Février 2019",
-        stage: "non",
+
         competences: [
             {
                 nom: "Gérer le patrimoine informatique",
@@ -221,7 +221,7 @@ export const formation = [
         description: "Developpement d'un programme de gestion de stock",
         startdate: "Janvier 2019",
         enddate: "Février 2019",
-        stage: "non",
+
         competences: [
             {
                 nom: "Gérer le patrimoine informatique",
@@ -256,7 +256,7 @@ export const formation = [
         description: "Developpement d'un programme de sauvegarde et synchronisation des données",
         startdate: "Janvier 2019",
         enddate: "Février 2019",
-        stage: "non",
+
         competences: [],
     },
     {
@@ -265,172 +265,7 @@ export const formation = [
         description: "Projet de réseau pour la mise en place d'un serveur de fichier et d'un serveur web",
         startdate: "Janvier 2019",
         enddate: "Février 2019",
-        stage: "non",
+
         competences: [],
-    },
-    {
-        id: 12,
-        title: "Developpement de mini jeux",
-        description: "Developpement de mini jeux en javascript",
-        startdate: "Janvier 2019",
-        enddate: "Février 2019",
-        stage: "oui",
-        competences: [
-            {
-                nom: "Gérer le patrimoine informatique",
-                details:
-                    "Mise en place d'une solution de chatbot intégrée au système d'information existant, nécessitant une gestion efficace des ressources informatiques et une maintenance régulière.",
-            },
-            {
-                nom: "Développer la présence en ligne de l’organisation",
-                details:
-                    "Utilisation de frameworks de développement pour créer un chatbot interactif et convivial, répondant aux besoins spécifiques de l'entreprise.",
-            },
-            {
-                nom: "Travailler en mode projet",
-                details:
-                    "Utilisation de frameworks de développement pour créer un chatbot interactif et convivial, répondant aux besoins spécifiques de l'entreprise.",
-            },
-            {
-                nom: "Organiser son développement professionnel",
-                details:
-                    "Utilisation de frameworks de développement pour créer un chatbot interactif et convivial, répondant aux besoins spécifiques de l'entreprise.",
-            },
-        ],
-    },
-    {
-        id: 13,
-        title: "Administration site 1",
-        description: "Administration d'un site web",
-        startdate: "Janvier 2019",
-        enddate: "Février 2019",
-        stage: "oui",
-        competences: [
-            {
-                nom: "Gérer le patrimoine informatique",
-                details:
-                    "Mise en place d'une solution de chatbot intégrée au système d'information existant, nécessitant une gestion efficace des ressources informatiques et une maintenance régulière.",
-            },
-            {
-                nom: "Développer la présence en ligne de l’organisation",
-                details:
-                    "Utilisation de frameworks de développement pour créer un chatbot interactif et convivial, répondant aux besoins spécifiques de l'entreprise.",
-            },
-            {
-                nom: "Travailler en mode projet",
-                details:
-                    "Utilisation de frameworks de développement pour créer un chatbot interactif et convivial, répondant aux besoins spécifiques de l'entreprise.",
-            },
-            {
-                nom: "Organiser son développement professionnel",
-                details:
-                    "Utilisation de frameworks de développement pour créer un chatbot interactif et convivial, répondant aux besoins spécifiques de l'entreprise.",
-            },
-        ],
-    },
-    {
-        id: 14,
-        title: "Administration site 2",
-        description: "Administration d'un site web",
-        startdate: "Janvier 2019",
-        enddate: "Février 2019",
-        stage: "oui",
-        competences: [
-            {
-                nom: "Gérer le patrimoine informatique",
-                details:
-                    "Mise en place d'une solution de chatbot intégrée au système d'information existant, nécessitant une gestion efficace des ressources informatiques et une maintenance régulière.",
-            },
-            {
-                nom: "Développer la présence en ligne de l’organisation",
-                details:
-                    "Utilisation de frameworks de développement pour créer un chatbot interactif et convivial, répondant aux besoins spécifiques de l'entreprise.",
-            },
-            {
-                nom: "Mettre à disposition des utilisateurs un service informatique",
-                details:
-                    "Utilisation de frameworks de développement pour créer un chatbot interactif et convivial, répondant aux besoins spécifiques de l'entreprise.",
-            },
-        ],
-    },
-    {
-        id: 15,
-        title: "Developpement site statique",
-        description: "Developpement d'un site web statique",
-        startdate: "Janvier 2019",
-        enddate: "Février 2019",
-        stage: "oui",
-        competences: [
-            {
-                nom: "Gérer le patrimoine informatique",
-                details:
-                    "Mise en place d'une solution de chatbot intégrée au système d'information existant, nécessitant une gestion efficace des ressources informatiques et une maintenance régulière.",
-            },
-            {
-                nom: "Répondre aux incidents et aux demandes d’assistance et d’évolution",
-                details:
-                    "Utilisation de frameworks de développement pour créer un chatbot interactif et convivial, répondant aux besoins spécifiques de l'entreprise.",
-            },
-            {
-                nom: "Développer la présence en ligne de l’organisation",
-                details:
-                    "Utilisation de frameworks de développement pour créer un chatbot interactif et convivial, répondant aux besoins spécifiques de l'entreprise.",
-            },
-            {
-                nom: "Travailler en mode projet",
-                details:
-                    "Utilisation de frameworks de développement pour créer un chatbot interactif et convivial, répondant aux besoins spécifiques de l'entreprise.",
-            },
-            {
-                nom: "Mettre à disposition des utilisateurs un service informatique",
-                details:
-                    "Utilisation de frameworks de développement pour créer un chatbot interactif et convivial, répondant aux besoins spécifiques de l'entreprise.",
-            },
-            {
-                nom: "Organiser son développement professionnel",
-                details:
-                    "Utilisation de frameworks de développement pour créer un chatbot interactif et convivial, répondant aux besoins spécifiques de l'entreprise.",
-            },
-        ],
-    },
-    {
-        id: 16,
-        title: "Developpement Chatbot",
-        description: "Developpement d'un chatbot",
-        startdate: "Janvier 2019",
-        enddate: "Février 2019",
-        stage: "oui",
-        competences: [
-            {
-                nom: "Gérer le patrimoine informatique",
-                details:
-                    "Mise en place d'une solution de chatbot intégrée au système d'information existant, nécessitant une gestion efficace des ressources informatiques et une maintenance régulière.",
-            },
-            {
-                nom: "Répondre aux incidents et aux demandes d’assistance et d’évolution",
-                details:
-                    "Utilisation de frameworks de développement pour créer un chatbot interactif et convivial, répondant aux besoins spécifiques de l'entreprise.",
-            },
-            {
-                nom: "Développer la présence en ligne de l’organisation",
-                details:
-                    "Utilisation de frameworks de développement pour créer un chatbot interactif et convivial, répondant aux besoins spécifiques de l'entreprise.",
-            },
-            {
-                nom: "Travailler en mode projet",
-                details:
-                    "Utilisation de frameworks de développement pour créer un chatbot interactif et convivial, répondant aux besoins spécifiques de l'entreprise.",
-            },
-            {
-                nom: "Mettre à disposition des utilisateurs un service informatique",
-                details:
-                    "Utilisation de frameworks de développement pour créer un chatbot interactif et convivial, répondant aux besoins spécifiques de l'entreprise.",
-            },
-            {
-                nom: "Organiser son développement professionnel",
-                details:
-                    "Utilisation de frameworks de développement pour créer un chatbot interactif et convivial, répondant aux besoins spécifiques de l'entreprise.",
-            },
-        ],
     },
 ];

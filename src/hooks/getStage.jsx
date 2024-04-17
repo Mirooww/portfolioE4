@@ -69,7 +69,6 @@ export default function getStage() {
                         >
                             <div className="textZone flexSpaceBetween">
                                 <h2>{item.title}</h2>
-                                <p>{item.descri}</p>
                             </div>
                             <div className="footerZone flexCentered" style={{ width: "100%", justifyContent: "space-around" }}>
                                 <h2 onClick={() => toggleModal(item.attest)} style={{ width: "33%" }}>

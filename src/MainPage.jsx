@@ -69,9 +69,14 @@ function MainPage() {
     };
 
     const [showModal, setShowModal] = useState(false);
-
-    const toggleModal = (formation) => {
+    const [cv, setCv] = useState("");
+    const toggleModalCv = () => {
         setShowModal(!showModal);
+        setCv("CV.pdf");
+    };
+    const toggleModalExcel = () => {
+        setShowModal(!showModal);
+        setCv("excelPortfolio.pdf");
     };
 
     return (
@@ -84,13 +89,13 @@ function MainPage() {
                         </div>
                         <h2 className="name">Jordan LANSOY</h2>
                         <div className="social">
-                            <div>
+                            <a href="https://github.com/Mirooww">
                                 <FontAwesomeIcon icon={faGithub} style={{ height: "80%" }} />
-                            </div>
-                            <div>
+                            </a>
+                            <a href="https://www.linkedin.com/in/jordan-lansoy/">
                                 <FontAwesomeIcon icon={faLinkedin} style={{ height: "80%" }} />
-                            </div>
-                            <div style={{ position: "relative" }}>
+                            </a>
+                            <div onClick={toggleModalCv}>
                                 <img src="SVG/logo-cv.svg" alt="logo CV" style={{ height: "80%" }} />
                             </div>
                         </div>
@@ -146,6 +151,13 @@ function MainPage() {
                         >
                             Stages
                         </Link>
+                        <div
+                            onClick={toggleModalExcel}
+                            className={"Categs"}
+                            style={{ fontSize: "24px", fontWeight: "700", color: stageInView ? "red" : "black" }}
+                        >
+                            EXCEL
+                        </div>
                     </nav>
                     <footer>
                         <p> COPYRIGHT 2024 @Nexum</p>
@@ -188,7 +200,7 @@ function MainPage() {
                                 </div>
 
                                 <div className="footerZone flexCentered">
-                                    <h2>CV</h2>
+                                    <h2 onClick={toggleModalExcel}>CV</h2>
                                 </div>
                             </div>
                         </div>
@@ -345,6 +357,34 @@ function MainPage() {
                     {getStage()}
                 </div>
             </div>
+            {showModal && (
+                <div style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", backgroundColor: "rgba(0, 0, 0, 0.5)", zIndex: "9999" }}>
+                    <div
+                        style={{
+                            position: "absolute",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%)",
+                            backgroundColor: "transparent",
+                            padding: "20px",
+                            height: "80%",
+                            width: "60%",
+                            overflow: "auto",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                        }}
+                        className="shadow2"
+                    >
+                        <FontAwesomeIcon
+                            icon={faXmark}
+                            onClick={() => toggleModalExcel(null)}
+                            style={{ position: "absolute", top: "15px", right: "15px", cursor: "pointer" }}
+                        />
+                        <iframe src={cv} style={{ width: "90%", height: "90%" }}></iframe>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
