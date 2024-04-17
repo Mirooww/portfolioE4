@@ -136,7 +136,7 @@ export default function getFormation(linkApi) {
                gap: "50px",
                width: openCategNav ? "calc(90% - 300px)" : "90%",
                color: "white",
-               padding: "40px 0px",
+               padding: "40px 30px",
                position: "relative",
                marginTop: "30px",
             }}
@@ -150,8 +150,10 @@ export default function getFormation(linkApi) {
                <div
                   key={formation.id}
                   style={{
-                     width: "300px",
-                     height: "400px",
+                     width: "250px",
+                     height: "300px",
+                     padding: "8px",
+
                      boxShadow: hoveredId === formation.id ? "0 0 7px 8px rgba(112, 10, 97, 0.8)" : "0 0 7px 2px rgba(255, 255, 255, 0.5)",
                   }}
                   className="shadow2"

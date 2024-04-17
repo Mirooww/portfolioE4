@@ -52,30 +52,41 @@ function MainPage() {
                   <h2 className="name">Jordan LANSOY</h2>
                   <div className="social">
                      <div>
-                        <FontAwesomeIcon icon={faGithub} style={{ height: "50%" }} />
+                        <FontAwesomeIcon icon={faGithub} style={{ height: "80%" }} />
                      </div>
                      <div>
-                        <FontAwesomeIcon icon={faLinkedin} style={{ height: "50%" }} />
+                        <FontAwesomeIcon icon={faLinkedin} style={{ height: "80%" }} />
                      </div>
                      <div style={{ position: "relative" }}>
-                        <FontAwesomeIcon icon={faFile} style={{ height: "70%" }} />
-                        <p style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", fontSize: "8px" }}> CV </p>
+                        <img src="SVG/logo-cv.svg" alt="logo CV" style={{ height: "80%" }} />
                      </div>
                   </div>
                </header>
                <nav>
-                  <Link to="accueil" smooth={true} duration={800} onClick={() => scrollToSection("accueil")}>
-                     Accueil
-                  </Link>
-                  <Link to="a_propos" smooth={true} duration={800} onClick={() => scrollToSection("a_propos")}>
-                     A Propos
-                  </Link>
-                  <Link to="parcours" smooth={true} duration={800} onClick={() => scrollToSection("parcours")}>
-                     Parcours
-                  </Link>
-                  <Link to="competences" smooth={true} duration={800} onClick={() => scrollToSection("competences")}>
-                     Compétences
-                  </Link>
+                  <div>
+                     <Link to="accueil" smooth={true} duration={800} onClick={() => scrollToSection("accueil")}>
+                        Accueil
+                     </Link>
+                     <hr style={{ height: "4px", width: "45%" }} />
+                  </div>
+                  <div>
+                     <Link to="a_propos" smooth={true} duration={800} onClick={() => scrollToSection("a_propos")}>
+                        A Propos
+                     </Link>
+                     <hr style={{ height: "4px", width: "45%" }} />
+                  </div>
+                  <div>
+                     <Link to="parcours" smooth={true} duration={800} onClick={() => scrollToSection("parcours")}>
+                        Parcours
+                     </Link>
+                     <hr style={{ height: "4px", width: "45%" }} />
+                  </div>
+                  <div>
+                     <Link to="competences" smooth={true} duration={800} onClick={() => scrollToSection("competences")}>
+                        Compétences
+                     </Link>
+                     <hr style={{ height: "4px", width: "45%" }} />
+                  </div>
                </nav>
                <footer>
                   <p> COPYRIGHT 2024 @Nexum</p>
@@ -97,14 +108,13 @@ function MainPage() {
                />
             </div>
             <div className="containerColumn" id="a_propos">
-               <div className="cadre" style={{ margin: "50px 0px" }}>
+               <div className="cadre columnCentered" style={{ margin: "50px 0px", minHeight: "400px" }}>
                   <h1>A Propos</h1>
-                  <div className="flex contentCadre">
+                  <div className="flex contentCadre flexCentered">
                      <div className="picFrame flexCentered">
                         <img src="/pictures/PP.jpeg" alt="photo_profil" />
                      </div>
                      <div className="zone">
-                        <h1>Présentation</h1>
                         <div className="textZone flexSpaceBetween">
                            <p> Salut, moi c'est Jordan LANSOY</p>
                            <p>
@@ -122,47 +132,6 @@ function MainPage() {
                      </div>
                   </div>
                </div>
-               <div className="cadreLine containerColumn" style={{ margin: "50px 0px" }}>
-                  <h1>Qu'est-ce que le BTS SIO ?</h1>
-                  <div className="textOnly">
-                     {" "}
-                     <p>
-                        Le Brevet de Technicien Supérieur aux Services Informatiques aux Organisations (BTS SIO), s'adresse à ceux qui souhaitent se former en
-                        deux ans aux métiers d'administrateur réseau ou de développeur. Pour par la suite intégré directement le marché du travail ou continuer
-                        des études, dans le domaine de l'informatique.
-                     </p>
-                     <h3>Le BTS SIO propose deux spécialités :</h3>
-                     <div className="containerOption">
-                        <div className="option containerColumn">
-                           <h2>🖥️ Option SISR</h2>
-                           <p className="flexCentered">
-                              L’option Solution d’infrastructure, systèmes et réseaux forme des professionnels des réseaux et équipements informatiques
-                              (installation, maintenance, sécurité). En sortant d’un BTS SIO SISR, vous serez capables de gérer et d’administrer le réseau d’une
-                              société et d’assurer sa sécurité et sa maintenance. Les techniciens supérieurs en informatique option SISR, peuvent accéder aux
-                              métiers de : .
-                           </p>
-                           <ul className="metier">
-                              <li>Administrateur systèmes et réseaux</li>
-                              <li>Informaticien support et déploiement</li>
-                              <li>Pilote exploitation</li>
-                           </ul>
-                        </div>
-                        <div className="option containerColumn">
-                           <h2>🖥️ Option SLAM</h2>
-                           <p className="flexCentered">
-                              L’option Solutions logicielles et applications métiers forme des spécialistes des logiciels (rédaction d’un cahier des charges,
-                              formulation des besoins et spécifications, développement, intégration au sein de la société). Les techniciens supérieurs en
-                              informatique option SLAM, sont préparés aux métiers de :{" "}
-                           </p>
-                           <ul className="metier">
-                              <li>Développeur d'applications</li>
-                              <li>Concepteur d'applications</li>
-                              <li>Analyste programmeur</li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
             </div>
             <div className="projets" id="parcours">
                <h1 style={{ textAlign: "center" }}> Liste des projets</h1>
@@ -173,76 +142,76 @@ function MainPage() {
                <h1> Compétences </h1>
                <div style={{ flexWrap: "wrap", width: "60%", justifyContent: "space-around" }} className="flexCentered">
                   <motion.div
-                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px" }}
+                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px", backgroundColor: "white" }}
                      className="shadow2 flexCentered"
                      whileHover={{ scale: [null, 1.5, 1.4] }}
                      transition={{ duration: 0.3 }}
                   >
-                     1
+                     <img src="/SVG/logo-adobe.svg" alt="logo-adobe" style={{ width: "90%", height: "90%" }} />
                   </motion.div>
                   <motion.div
-                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px" }}
+                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px", backgroundColor: "white" }}
                      className="shadow2 flexCentered"
                      whileHover={{ scale: [null, 1.5, 1.4] }}
                      transition={{ duration: 0.3 }}
                   >
-                     1
+                     <img src="/SVG/logo-figma.svg" alt="logo-adobe" style={{ width: "90%", height: "90%" }} />
                   </motion.div>
                   <motion.div
-                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px" }}
+                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px", backgroundColor: "white" }}
                      className="shadow2 flexCentered"
                      whileHover={{ scale: [null, 1.5, 1.4] }}
                      transition={{ duration: 0.3 }}
                   >
-                     1
+                     <img src="/SVG/logo-firebase.svg" alt="logo-adobe" style={{ width: "90%", height: "90%" }} />
                   </motion.div>
                   <motion.div
-                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px" }}
+                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px", backgroundColor: "white" }}
                      className="shadow2 flexCentered"
                      whileHover={{ scale: [null, 1.5, 1.4] }}
                      transition={{ duration: 0.3 }}
                   >
-                     1
+                     <img src="/SVG/logo-github.svg" alt="logo-adobe" style={{ width: "90%", height: "90%" }} />
                   </motion.div>
                   <motion.div
-                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px" }}
+                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px", backgroundColor: "white" }}
                      className="shadow2 flexCentered"
                      whileHover={{ scale: [null, 1.5, 1.4] }}
                      transition={{ duration: 0.3 }}
                   >
-                     1
+                     <img src="/SVG/logo-mysql.svg" alt="logo-adobe" style={{ width: "90%", height: "90%" }} />
                   </motion.div>
                   <motion.div
-                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px" }}
+                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px", backgroundColor: "white" }}
                      className="shadow2 flexCentered"
                      whileHover={{ scale: [null, 1.5, 1.4] }}
                      transition={{ duration: 0.3 }}
                   >
-                     1
+                     <img src="/SVG/logo-python.svg" alt="logo-adobe" style={{ width: "90%", height: "90%" }} />
                   </motion.div>
                   <motion.div
-                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px" }}
+                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px", backgroundColor: "white" }}
                      className="shadow2 flexCentered"
                      whileHover={{ scale: [null, 1.5, 1.4] }}
                      transition={{ duration: 0.3 }}
                   >
-                     1
+                     <img src="/SVG/logo-react.svg" alt="logo-adobe" style={{ width: "90%", height: "90%" }} />
                   </motion.div>
                   <motion.div
-                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px" }}
+                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px", backgroundColor: "white" }}
                      className="shadow2 flexCentered"
                      whileHover={{ scale: [null, 1.5, 1.4] }}
                      transition={{ duration: 0.3 }}
                   >
-                     1
+                     <img src="/SVG/logo-seo.svg" alt="logo-adobe" style={{ width: "90%", height: "90%" }} />
                   </motion.div>
                   <motion.div
-                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px" }}
+                     style={{ width: "75px", height: "75px", borderRadius: "100%", margin: "10px 30px", boxShadow: "0 0 0 1px", backgroundColor: "white" }}
                      className="shadow2 flexCentered"
                      whileHover={{ scale: [null, 1.5, 1.4] }}
                      transition={{ duration: 0.3 }}
                   >
-                     1
+                     <img src="/SVG/logo-symfony.svg" alt="logo-adobe" style={{ width: "90%", height: "90%" }} />
                   </motion.div>
                </div>
             </div>

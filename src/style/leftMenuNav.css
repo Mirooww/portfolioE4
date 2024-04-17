@@ -1,14 +1,16 @@
 .leftMenuNav {
    width: 300px;
    height: 100vh;
-   box-shadow: 0 0 0 1px;
    position: fixed;
    background-color: #fffafa;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
 }
 
 .leftMenuNav header {
    height: 33%;
-   box-shadow: 0 0 0 1px;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -27,36 +29,39 @@
 }
 
 .leftMenuNav header .name {
-   box-shadow: 0 0 0 1px;
+   color: #000;
+   text-align: center;
+   font-size: 30px;
 }
 .leftMenuNav header .social {
-   box-shadow: 0 0 0 1px;
    display: flex;
    justify-content: space-around;
    align-items: center;
-   width: 70%;
+   width: 90%;
 }
 .leftMenuNav header .social div {
    box-shadow: 0 0 0 1px;
-   height: 30px;
-   width: 30px;
+   height: 40px;
+   width: 40px;
    display: flex;
    justify-content: center;
    align-items: center;
    border-radius: 100%;
 }
 .leftMenuNav nav {
+   padding: 15px;
    display: flex;
    flex-direction: column;
-   align-items: center;
    justify-content: space-around;
    height: 60%;
-   box-shadow: 0 0 0 1px red;
+   width: 80%;
+}
+.leftMenuNav nav > {
+   color: yellow;
 }
 .leftMenuNav footer {
    display: flex;
    justify-content: center;
    align-items: center;
    height: 7%;
-   box-shadow: 0 0 0 1px blue;
 }
