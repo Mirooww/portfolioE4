@@ -1,12 +1,11 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
 
-.shadow2{
-    background-image: url(/public/shadow.svg);
-    backdrop-filter: blur(7px);
-    border-radius: 25px;
-
- }
+.shadow2 {
+   background-image: url(/shadow.svg);
+   backdrop-filter: blur(7px);
+   border-radius: 25px;
+}
