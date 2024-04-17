@@ -4,6 +4,7 @@
    width: 100vw;
    display: flex;
    color: #fff;
+   font-family: "lato", sans-serif;
 }
 .BigTitle {
    color: #fff;
@@ -82,11 +83,8 @@
    height: 100%;
 }
 
-.cadre .contentCadre .zone h1 {
-   height: 15%;
-}
 .cadre .contentCadre .zone .textZone {
-   height: 60%;
+   height: 75%;
    padding: 25px;
 }
 
