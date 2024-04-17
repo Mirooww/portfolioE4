@@ -158,7 +158,9 @@ function MainPage() {
                 <div id="stars2"></div>
                 <div id="stars3"></div>
                 <div className="container" id="accueil" ref={accueilRef}>
-                    <h1 className="BigTitle">BIENVENUE SUR MON PORTFOLIO</h1>
+                    <h1 className="BigTitle" style={{ textAlign: "center" }}>
+                        BIENVENUE SUR MON PORTFOLIO
+                    </h1>
 
                     <FontAwesomeIcon
                         icon={faBars}
@@ -169,11 +171,11 @@ function MainPage() {
                 <div className="containerColumn" id="a_propos" ref={aProposRef}>
                     <div className="cadre columnCentered" style={{ margin: "50px 0px", minHeight: "400px" }}>
                         <h1>A Propos</h1>
-                        <div className="flex contentCadre flexCentered">
+                        <div className="flex contentCadre flexCentered" style={{ flexDirection: openSideNav ? "row" : "column" }}>
                             <div className="picFrame flexCentered">
                                 <img src="/pictures/PP.jpeg" alt="photo_profil" />
                             </div>
-                            <div className="zone">
+                            <div className="zone" style={{ width: openSideNav ? "67%" : "100%" }}>
                                 <div className="textZone flexSpaceBetween">
                                     <p> Salut, moi c'est Jordan LANSOY</p>
                                     <p>
