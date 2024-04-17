@@ -62,7 +62,7 @@ export default function getFormation(linkApi) {
       },
    };
    return (
-      <div style={{ boxShadow: "0 0 0 1px", width: "100%", display: "flex", justifyContent: "space-around", padding: "0 50px" }}>
+      <div style={{ boxShadow: "0 0 0 1px", width: "100%", display: "flex", justifyContent: "space-around", padding: "0 15px" }}>
          {openCategNav && (
             <motion.div
                style={{
@@ -74,6 +74,7 @@ export default function getFormation(linkApi) {
                   height: "600px",
                   justifyContent: "center",
                   alignItems: "center",
+                  boxShadow: "0 0 0 1px",
                }}
                className="shadow2"
                initial="closed"
@@ -124,9 +125,13 @@ export default function getFormation(linkApi) {
                width: openCategNav ? "calc(90% - 300px)" : "90%",
                color: "white",
                padding: "40px 0px",
+               boxShadow: "0 0 0 1px",
+               position: "relative",
             }}
          >
-            <button onClick={cycleOpenCategNav}>{openCategNav ? "Close" : "Open"}</button>
+            <button onClick={cycleOpenCategNav} style={{ position: "absolute", top: "10px", left: "10px" }}>
+               {openCategNav ? "Close" : "Open"}
+            </button>
             {filteredFormations.map((formation) => (
                <div
                   key={formation.id}
@@ -183,7 +188,16 @@ export default function getFormation(linkApi) {
                >
                   {selectedFormation && ( // Vérifie si selectedFormation existe
                      <>
-                        <div style={{ height: "20%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-around" }}>
+                        <div
+                           style={{
+                              height: "20%",
+                              display: "flex",
+                              flexDirection: "column",
+                              alignItems: "center",
+                              justifyContent: "space-around",
+                              position: "relative",
+                           }}
+                        >
                            <h2 style={{ textAlign: "center", fontSize: "20px" }}>{selectedFormation.title}</h2>
                            <p>{selectedFormation.startdate}</p>
                         </div>
@@ -192,7 +206,9 @@ export default function getFormation(linkApi) {
                            <div style={{ height: "60%" }}>
                               <img src="" alt="" />
                            </div>
-                           <button onClick={toggleModal}>Fermer</button>
+                           <button onClick={toggleModal} style={{ position: "absolute", top: "15px", left: "15px" }}>
+                              Fermer
+                           </button>
 
                            <div
                               style={{

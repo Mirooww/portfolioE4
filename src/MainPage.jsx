@@ -33,7 +33,7 @@ function MainPage() {
    };
 
    return (
-      <div className="corps">
+      <div className="body">
          {openSideNav && (
             <motion.div className="leftMenuNav" initial="closed" animate="open" variants={sideVariants}>
                <header>
@@ -67,24 +67,26 @@ function MainPage() {
             </motion.div>
          )}
 
-         <div className="content" style={{ marginLeft: !openSideNav ? "0px" : "300px", width: !openSideNav ? "100%" : "calc(100% - 300px)" }}>
+         <div className="main" style={{ marginLeft: !openSideNav ? "0px" : "300px", width: !openSideNav ? "100%" : "calc(100% - 300px)" }}>
             <div id="stars"></div>
             <div id="stars2"></div>
             <div id="stars3"></div>
-            <div className="accueil">
-               <h1 className="title">BIENVENUE SUR MON PORTFOLIO</h1>
-               <button onClick={cycleOpenSideNav}>{openSideNav ? "Close" : "Open"}</button>
+            <div className="container">
+               <h1 className="BigTitle">BIENVENUE SUR MON PORTFOLIO</h1>
+               <button onClick={cycleOpenSideNav} style={{ position: "absolute", top: "20px", right: "20px" }}>
+                  {openSideNav ? "Close" : "Open"}
+               </button>
             </div>
-            <div className="APropos">
-               <div className="AProposContainer">
-                  <div className="Cadre">
-                     <h1 className="title">A Propos</h1>
-                     <div className="PresentationBox">
-                        <div className="picturesFrame">
-                           <img src="/pictures/PP.jpeg" alt="photo_profil" />
-                        </div>
-                        <div className="PresentationContent">
-                           <h2>Présentation</h2>
+            <div className="containerColumn">
+               <div className="cadre" style={{ margin: "50px 0px" }}>
+                  <h1>A Propos</h1>
+                  <div className="flex contentCadre">
+                     <div className="picFrame flexCentered">
+                        <img src="/pictures/PP.jpeg" alt="photo_profil" />
+                     </div>
+                     <div className="zone">
+                        <h1>Présentation</h1>
+                        <div className="textZone flexSpaceBetween">
                            <p> Salut, moi c'est Jordan LANSOY</p>
                            <p>
                               Je suis actuellement étudiant en 2éme année de BTS SIO (Services Informatiques aux Organisations) option SLAM (Solutions
@@ -92,62 +94,63 @@ function MainPage() {
                            </p>
                            <p>Sur mon portfolio vous retrouverez toutes les notions et projets vu lors de ces 2 années de BTS SIO.</p>
 
-                           <p>Vous pourrez retrouver mon CV ici :</p>
-                           <div className="cvContainer">
-                              <div className="cv">
-                                 <h2>CV</h2>
-                              </div>
-                           </div>
+                           <p style={{ textAlign: "center" }}>Vous pourrez retrouver mon CV ici :</p>
+                        </div>
+
+                        <div className="footerZone flexCentered">
+                           <h2>CV</h2>
                         </div>
                      </div>
                   </div>
                </div>
-               <div className="BtsSIO">
-                  <div className="TopContainer">
-                     <h1>Qu'est-ce que le BTS SIO ?</h1>
+               <div className="cadreLine containerColumn" style={{ margin: "50px 0px" }}>
+                  <h1>Qu'est-ce que le BTS SIO ?</h1>
+                  <div className="textOnly">
+                     {" "}
                      <p>
                         Le Brevet de Technicien Supérieur aux Services Informatiques aux Organisations (BTS SIO), s'adresse à ceux qui souhaitent se former en
                         deux ans aux métiers d'administrateur réseau ou de développeur. Pour par la suite intégré directement le marché du travail ou continuer
                         des études, dans le domaine de l'informatique.
                      </p>
                      <h3>Le BTS SIO propose deux spécialités :</h3>
-                  </div>
-
-                  <div className="OptionContainer">
-                     <div className="option">
-                        <h2>🖥️ Option SISR</h2>
-                        <p>
-                           L’option Solution d’infrastructure, systèmes et réseaux forme des professionnels des réseaux et équipements informatiques
-                           (installation, maintenance, sécurité). En sortant d’un BTS SIO SISR, vous serez capables de gérer et d’administrer le réseau d’une
-                           société et d’assurer sa sécurité et sa maintenance. Les techniciens supérieurs en informatique option SISR, peuvent accéder aux
-                           métiers de : .
-                        </p>
-                        <ul>
-                           <li>Administrateur systèmes et réseaux</li>
-                           <li>Informaticien support et déploiement</li>
-                           <li>Pilote exploitation</li>
-                        </ul>
-                     </div>
-                     <div className="option">
-                        <h2>🖥️ Option SLAM</h2>
-                        <p>
-                           L’option Solutions logicielles et applications métiers forme des spécialistes des logiciels (rédaction d’un cahier des charges,
-                           formulation des besoins et spécifications, développement, intégration au sein de la société). Les techniciens supérieurs en
-                           informatique option SLAM, sont préparés aux métiers de :{" "}
-                        </p>
-                        <ul>
-                           <li>Développeur d'applications</li>
-                           <li>Concepteur d'applications</li>
-                           <li>Analyste programmeur</li>
-                        </ul>
+                     <div className="containerOption">
+                        <div className="option containerColumn">
+                           <h2>🖥️ Option SISR</h2>
+                           <p className="flexCentered">
+                              L’option Solution d’infrastructure, systèmes et réseaux forme des professionnels des réseaux et équipements informatiques
+                              (installation, maintenance, sécurité). En sortant d’un BTS SIO SISR, vous serez capables de gérer et d’administrer le réseau d’une
+                              société et d’assurer sa sécurité et sa maintenance. Les techniciens supérieurs en informatique option SISR, peuvent accéder aux
+                              métiers de : .
+                           </p>
+                           <ul className="metier">
+                              <li>Administrateur systèmes et réseaux</li>
+                              <li>Informaticien support et déploiement</li>
+                              <li>Pilote exploitation</li>
+                           </ul>
+                        </div>
+                        <div className="option containerColumn">
+                           <h2>🖥️ Option SLAM</h2>
+                           <p className="flexCentered">
+                              L’option Solutions logicielles et applications métiers forme des spécialistes des logiciels (rédaction d’un cahier des charges,
+                              formulation des besoins et spécifications, développement, intégration au sein de la société). Les techniciens supérieurs en
+                              informatique option SLAM, sont préparés aux métiers de :{" "}
+                           </p>
+                           <ul className="metier">
+                              <li>Développeur d'applications</li>
+                              <li>Concepteur d'applications</li>
+                              <li>Analyste programmeur</li>
+                           </ul>
+                        </div>
                      </div>
                   </div>
                </div>
             </div>
             <div className="projets">
                <h1> Liste des projets</h1>
+
                {getFormation(formation)}
             </div>
+            <div className="contentLine"></div>
          </div>
       </div>
    );

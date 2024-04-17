@@ -1,39 +1,174 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sixtyfour&display=swap");
 
-.corps {
+.body {
    width: 100vw;
    display: flex;
+   color: #fff;
 }
 
-.corps .leftMenuNav {
-   width: 300px;
+.flex {
+   display: flex;
 }
-
-.content .accueil {
-   height: 100vh;
+.flexCentered {
    display: flex;
    justify-content: center;
    align-items: center;
 }
 
-.content .accueil .title {
+.main {
+   position: relative;
+}
+.flexSpaceBetween {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+.container {
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.containerColumn {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.cadre {
+   max-width: 90%;
+   width: 90%;
+   padding: 25px;
+   display: flex;
+   flex-direction: column;
+   border-radius: 25px;
+   box-shadow: 0 0 7px 2px rgba(255, 255, 255, 0.5);
+   backdrop-filter: blur(1px);
+   background: linear-gradient(-45deg, rgba(30, 30, 30, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+.cadre h1 {
+   width: auto;
+   padding-bottom: 25px;
+   color: #fff;
+}
+
+.cadre .contentCadre {
+   height: 400px;
+}
+
+.cadre .contentCadre .picFrame {
+   width: 33%;
+}
+
+.cadre .contentCadre .picFrame img {
+   width: 75%;
+   border-radius: 100%;
+   min-width: 200px;
+}
+
+.cadre .contentCadre .zone {
+   padding: 15px;
+   color: white;
+   height: 100%;
+}
+
+.cadre .contentCadre .zone h1 {
+   height: 15%;
+}
+.cadre .contentCadre .zone .textZone {
+   height: 60%;
+   padding: 25px;
+}
+
+.cadre .contentCadre .zone .footerZone {
+   height: 25%;
+}
+
+.cadre .contentCadre .zone .footerZone h2 {
+   box-shadow: 0 0 0 1px;
+   padding: 15px 55px;
+   border-radius: 25px;
+   transition: transform 0.5s ease;
+}
+
+.cadre .contentCadre .zone .footerZone h2:hover {
+   transition: width 0.5s ease;
+   background-color: blue;
+}
+
+.cadreLine {
+   width: 100%;
+   padding: 25px;
+   justify-content: space-around;
+   background-color: black;
+}
+
+.cadreLine h1 {
+   height: 50px;
+}
+
+.cadreLine .textOnly {
+   width: 75%;
+}
+
+.containerOption {
+   display: flex;
+   justify-content: space-around;
+   padding: 40px 0;
+}
+.containerOption .option {
+   width: 40%;
+   height: 300px;
+}
+.containerOption .option h2 {
+   height: 20%;
+}
+.containerOption .option p {
+   height: 50%;
+}
+
+.containerOption .option .metier {
+   margin: 10px 0px;
+   width: 70%;
+   height: auto;
+   height: 30%;
+}
+.containerOption .option .metier li {
+   text-align: left;
+}
+
+/* Projets */
+
+.Projects {
+   padding: 20px;
+}
+
+/* .main .accueil {
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+} */
+/* 
+.BigTitle {
    color: #fff;
    font-family: "lato", sans-serif;
    font-weight: 700;
    font-size: 50px;
    letter-spacing: 10px;
-
    background: -webkit-linear-gradient(white, #38495a);
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
 }
-.content .APropos {
+.APropos {
    display: flex;
    flex-direction: column;
    align-items: center;
 }
 
-.content .APropos .AProposContainer {
+.AProposContainer {
    height: 100vh;
    width: 90%;
    display: flex;
@@ -41,32 +176,19 @@
    flex-direction: column;
 }
 
-.content .APropos .Cadre {
-   height: 60%;
-   display: flex;
-   flex-direction: column;
-   padding: 30px;
-   min-height: 500px;
-
-   border-radius: 25px;
-   box-shadow: 0 0 7px 2px rgba(255, 255, 255, 0.5);
-   backdrop-filter: blur(1px);
-   background: linear-gradient(-45deg, rgba(30, 30, 30, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
-}
-
-.content .APropos .Cadre .title {
+.title {
    height: 50px;
    color: white;
 }
 
-.content .APropos .Cadre .PresentationBox {
+.PresentationBox {
    height: calc(100vh - 50px);
    display: flex;
    justify-content: space-around;
    align-items: center;
 }
 
-.PresentationBox .picturesFrame {
+.picturesFrame {
    width: 30%;
    height: 80%;
    display: flex;
@@ -74,12 +196,12 @@
    align-items: center;
 }
 
-.PresentationBox .picturesFrame img {
+.picturesFrame img {
    width: 70%;
    border-radius: 50%;
 }
 
-.PresentationBox .PresentationContent {
+.PresentationContent {
    width: 60%;
    display: flex;
    flex-direction: column;
@@ -89,26 +211,26 @@
    font-family: "Poppins", sans-serif;
 }
 
-.PresentationBox .PresentationContent h2 {
+.PresentationContent h2 {
    color: #fff;
    font-size: 32px;
    font-weight: 700;
 }
 
-.PresentationBox .PresentationContent p {
+.PresentationContent p {
    color: #fff;
    font-size: 18px;
    font-weight: 500;
 }
 
-.PresentationBox .PresentationContent p:last-child {
+.PresentationContent p:last-child {
    color: red;
    font-size: 18px;
    font-weight: 500;
    text-align: center;
 }
 
-.PresentationBox .PresentationContent .cvContainer {
+.cvContainer {
    height: 100px;
    width: 100%;
    display: flex;
@@ -116,7 +238,7 @@
    align-items: center;
 }
 
-.cvContainer .cv {
+.cv {
    height: 50%;
    width: 150px;
    display: flex;
@@ -129,11 +251,11 @@
    transition: color 0.5s ease;
    box-shadow: 0 0 0 1px white;
 }
-.cvContainer .cv:hover {
+.cv:hover {
    color: #000;
    box-shadow: none;
 }
-.cvContainer .cv::before {
+.cv::before {
    content: "";
    position: absolute;
    top: 0;
@@ -146,12 +268,12 @@
    color: #000;
 }
 
-.cvContainer .cv:hover::before {
+.cv:hover::before {
    width: 100%;
    color: #000;
 }
 
-.cvContainer .cv h2 {
+.cv h2 {
    position: absolute;
    z-index: 50;
    text-align: center;
@@ -159,11 +281,11 @@
    color: inherit;
 }
 
-.cvContainer .cv:hover h2 {
+.cv:hover h2 {
    color: #000;
 }
 
-.content .APropos .BtsSIO {
+.BtsSIO {
    height: 60vh;
    z-index: 10;
    min-height: 650px;
@@ -189,11 +311,11 @@
    font-size: 22px;
 }
 
-.BtsSIO .OptionContainer {
+.OptionContainer {
    display: flex;
    height: 50%;
 }
-.BtsSIO .TopContainer {
+.TopContainer {
    height: 40%;
    display: flex;
    flex-direction: column;
@@ -201,7 +323,7 @@
    justify-content: space-between;
 }
 
-.OptionContainer .option {
+.option {
    margin-bottom: 20px;
 }
 .option h2 {
@@ -246,3 +368,17 @@
 .projets h1 {
    color: #fff;
 }
+
+.Compts {
+   height: 60vh;
+   z-index: 10;
+   min-height: 650px;
+   width: 100%;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   flex-direction: column;
+   color: white;
+   background-color: #00000077;
+   padding: 25px 15%;
+} */
