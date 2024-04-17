@@ -8,19 +8,31 @@ import { Link, animateScroll as scroll } from "react-scroll";
 import { motion, useCycle } from "framer-motion";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import { formation } from "./json/Projets";
 
 import getFormation from "./hooks/getFormation";
+import getStage from "./hooks/getStage";
 
 import { useInView } from "react-intersection-observer";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function MainPage() {
-    const [openSideNav, cycleOpenSideNav] = useCycle(false, true);
+    const [openSideNav, setOpenSideNav] = useState(window.innerWidth > 962);
+    useEffect(() => {
+        const handleResize = () => {
+            setOpenSideNav(window.innerWidth > 962);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     const sideVariants = {
         closed: {
@@ -50,6 +62,17 @@ function MainPage() {
     const [aProposRef, aProposInView] = useInView({ threshold: 0.5 });
     const [parcoursRef, parcoursInView] = useInView({ threshold: 0.5 });
     const [competencesRef, competencesInView] = useInView({ threshold: 0.5 });
+    const [stageRef, stageInView] = useInView({ threshold: 0.5 });
+
+    const toggleSideNav = () => {
+        setOpenSideNav(!openSideNav);
+    };
+
+    const [showModal, setShowModal] = useState(false);
+
+    const toggleModal = (formation) => {
+        setShowModal(!showModal);
+    };
 
     return (
         <div className="body">
@@ -73,30 +96,56 @@ function MainPage() {
                         </div>
                     </header>
                     <nav>
-                        <div className={activeSection === "accueil" ? "active" : "Categs"}>
-                            <Link to="accueil" smooth={true} duration={800} onClick={() => scrollToSection("accueil")}>
-                                Accueil
-                            </Link>
-                            <hr style={{ height: "6px", width: "60%", backgroundColor: accueilInView ? "rgb(112, 10, 97)" : "black" }} />
-                        </div>
-                        <div className={activeSection === "a_propos" ? "active" : "Categs"}>
-                            <Link to="a_propos" smooth={true} duration={800} onClick={() => scrollToSection("a_propos")}>
-                                A Propos
-                            </Link>
-                            <hr style={{ height: "6px", width: "60%", backgroundColor: aProposInView ? "rgb(112, 10, 97)" : "black" }} />
-                        </div>
-                        <div className={activeSection === "parcours" ? "active" : "Categs"}>
-                            <Link to="parcours" smooth={true} duration={800} onClick={() => scrollToSection("parcours")}>
-                                Parcours
-                            </Link>
-                            <hr style={{ height: "6px", width: "60%", backgroundColor: parcoursInView ? "rgb(112, 10, 97)" : "black" }} />
-                        </div>
-                        <div className={activeSection === "competences" ? "active" : "Categs"}>
-                            <Link to="competences" smooth={true} duration={800} onClick={() => scrollToSection("competences")}>
-                                Compétences
-                            </Link>
-                            <hr style={{ height: "6px", width: "60%", backgroundColor: competencesInView ? "rgb(112, 10, 97)" : "black" }} />
-                        </div>
+                        <Link
+                            to="accueil"
+                            smooth={true}
+                            duration={800}
+                            onClick={() => scrollToSection("accueil")}
+                            className={activeSection === "accueil" ? "active" : "Categs"}
+                            style={{ fontSize: "24px", fontWeight: "700", color: accueilInView ? "red" : "black" }}
+                        >
+                            Accueil
+                        </Link>
+                        <Link
+                            to="a_propos"
+                            smooth={true}
+                            duration={800}
+                            onClick={() => scrollToSection("a_propos")}
+                            className={activeSection === "a_propos" ? "active" : "Categs"}
+                            style={{ fontSize: "24px", fontWeight: "700", color: aProposInView ? "red" : "black" }}
+                        >
+                            A Propos
+                        </Link>
+                        <Link
+                            to="parcours"
+                            smooth={true}
+                            duration={800}
+                            onClick={() => scrollToSection("parcours")}
+                            className={activeSection === "parcours" ? "active" : "Categs"}
+                            style={{ fontSize: "24px", fontWeight: "700", color: parcoursInView ? "red" : "black" }}
+                        >
+                            Compétences
+                        </Link>
+                        <Link
+                            to="competences"
+                            smooth={true}
+                            duration={800}
+                            onClick={() => scrollToSection("competences")}
+                            className={activeSection === "competences" ? "active" : "Categs"}
+                            style={{ fontSize: "24px", fontWeight: "700", color: competencesInView ? "red" : "black" }}
+                        >
+                            Compétences
+                        </Link>
+                        <Link
+                            to="stage"
+                            smooth={true}
+                            duration={800}
+                            onClick={() => scrollToSection("stage")}
+                            className={activeSection === "competences" ? "active" : "Categs"}
+                            style={{ fontSize: "24px", fontWeight: "700", color: stageInView ? "red" : "black" }}
+                        >
+                            Stages
+                        </Link>
                     </nav>
                     <footer>
                         <p> COPYRIGHT 2024 @Nexum</p>
@@ -113,7 +162,7 @@ function MainPage() {
 
                     <FontAwesomeIcon
                         icon={faBars}
-                        onClick={cycleOpenSideNav}
+                        onClick={toggleSideNav}
                         style={{ position: "fixed", top: "20px", left: openSideNav ? "310px" : "20px", height: "50px", width: "50px", zIndex: "9999" }}
                     />
                 </div>
@@ -143,8 +192,10 @@ function MainPage() {
                         </div>
                     </div>
                 </div>
-                <div className="projets" id="parcours" ref={parcoursRef}>
-                    <h1 style={{ textAlign: "center" }}> Liste des projets</h1>
+                <div className="projets">
+                    <h1 style={{ textAlign: "center" }} id="parcours" ref={parcoursRef}>
+                        Liste des projets
+                    </h1>
 
                     {getFormation(formation)}
                 </div>
@@ -287,6 +338,9 @@ function MainPage() {
                             <img src="/SVG/logo-symfony.svg" alt="logo-adobe" style={{ width: "90%", height: "90%" }} />
                         </motion.div>
                     </div>
+                </div>
+                <div className="containerColumn" id="stage" ref={stageRef}>
+                    {getStage()}
                 </div>
             </div>
         </div>

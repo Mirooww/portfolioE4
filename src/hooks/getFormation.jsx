@@ -12,8 +12,7 @@ export default function getFormation(linkApi) {
     const [hoveredId, setHoveredId] = useState(null);
     const [showModal, setShowModal] = useState(false);
     const [selectedFormation, setSelectedFormation] = useState([]);
-
-    const [openCategNav, cycleOpenCategNav] = useCycle(false, true);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     useEffect(() => {
         const fetchFormations = async () => {
@@ -26,6 +25,19 @@ export default function getFormation(linkApi) {
         };
 
         fetchFormations();
+    }, []);
+
+    const [openSideNav, setOpenSideNav] = useState(window.innerWidth > 962);
+    useEffect(() => {
+        const handleResize = () => {
+            setOpenSideNav(window.innerWidth > 962);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
     }, []);
 
     const formationsRef = useRef(null); // Référence à la div contenant les formations
@@ -73,9 +85,12 @@ export default function getFormation(linkApi) {
             },
         },
     };
+    const toggleSideNav = () => {
+        setOpenSideNav(!openSideNav);
+    };
     return (
         <div style={{ width: "100%", display: "flex", justifyContent: "space-around", padding: "0 15px" }}>
-            {openCategNav && (
+            {openSideNav && (
                 <motion.div
                     style={{
                         width: "300px",
@@ -134,7 +149,7 @@ export default function getFormation(linkApi) {
                     justifyContent: "space-around",
                     alignItems: "flex-start",
                     gap: "50px",
-                    width: openCategNav ? "calc(90% - 300px)" : "90%",
+                    width: openSideNav ? "calc(90% - 300px)" : "90%",
                     color: "white",
                     padding: "40px 30px",
                     position: "relative",
@@ -142,8 +157,8 @@ export default function getFormation(linkApi) {
                 }}
             >
                 <FontAwesomeIcon
-                    icon={openCategNav ? faArrowLeft : faArrowRight}
-                    onClick={cycleOpenCategNav}
+                    icon={openSideNav ? faArrowLeft : faArrowRight}
+                    onClick={toggleSideNav}
                     style={{ position: "absolute", top: "0px", left: "10px", height: "30px", width: "30px" }}
                 />
                 {filteredFormations.map((formation) => (
