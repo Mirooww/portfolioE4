@@ -183,7 +183,7 @@ export default function getFormation(linkApi) {
 
                         <div style={{ height: "80%" }}>
                             <div style={{ height: "60%" }}>
-                                <img src="" alt="" />
+                                <img src="SVG/logo-QMark.svg" alt="" style={{ width: "100%", height: "100%" }} />
                             </div>
                             <div
                                 style={{
@@ -235,7 +235,7 @@ export default function getFormation(linkApi) {
 
                                 <div style={{ height: "80%" }}>
                                     <div style={{ height: "60%" }}>
-                                        <img src="" alt="" />
+                                        <img src="SVG/logo-QMark.svg" alt="" style={{ width: "100%", height: "100%" }} />
                                     </div>
                                     <FontAwesomeIcon
                                         icon={faXmark}
