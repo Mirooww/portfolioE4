@@ -130,7 +130,7 @@ function MainPage() {
                             className={activeSection === "parcours" ? "active" : "Categs"}
                             style={{ fontSize: "24px", fontWeight: "700", color: parcoursInView ? "red" : "black" }}
                         >
-                            Compétences
+                            Projets
                         </Link>
                         <Link
                             to="competences"
@@ -211,13 +211,13 @@ function MainPage() {
                                 </div>
 
                                 <div className="footerZone flexCentered">
-                                    <h2 onClick={toggleModalExcel}>CV</h2>
+                                    <h2 onClick={toggleModalCv}>CV</h2>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="projets">
+                <div className="projets" style={{ minHeight: "700px" }}>
                     <h1 style={{ textAlign: "center" }} id="parcours" ref={parcoursRef}>
                         Liste des projets
                     </h1>

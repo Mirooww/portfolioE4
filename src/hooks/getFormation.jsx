@@ -101,6 +101,7 @@ export default function getFormation(linkApi) {
                         height: "600px",
                         justifyContent: "center",
                         alignItems: "center",
+                        minHeight: "800px",
                     }}
                     className="shadow2"
                     initial="closed"
@@ -166,7 +167,7 @@ export default function getFormation(linkApi) {
                         key={formation.id}
                         style={{
                             width: "250px",
-                            height: "300px",
+                            height: "400px",
                             padding: "8px",
 
                             boxShadow: hoveredId === formation.id ? "0 0 7px 8px rgba(112, 10, 97, 0.8)" : "0 0 7px 2px rgba(255, 255, 255, 0.5)",
@@ -182,9 +183,10 @@ export default function getFormation(linkApi) {
                         </div>
 
                         <div style={{ height: "80%" }}>
-                            <div style={{ height: "60%" }}>
-                                <img src="SVG/logo-QMark.svg" alt="" style={{ width: "100%", height: "100%" }} />
+                            <div style={{ height: "60%", display: "flex", justifyContent: "center", alignItems: "center", overflow: "hidden" }}>
+                                <img src={formation.pictures} alt="" style={{ width: "auto", height: "100%" }} />
                             </div>
+
                             <div
                                 style={{
                                     height: "40%",
@@ -210,9 +212,9 @@ export default function getFormation(linkApi) {
                             transform: "translate(-50%, -50%)",
                             backgroundColor: "rgba(0, 0, 0, 0.7)",
                             padding: "20px",
-                            height: "60%",
-                            width: "70%",
-                            overflow: "auto", // Ajout pour permettre le défilement si le contenu est trop grand
+                            height: "90%", // Adjusted height
+                            width: "90%",
+                            overflow: "auto", // Enable scrolling
                             color: "white",
                         }}
                         className="shadow2"
@@ -234,8 +236,8 @@ export default function getFormation(linkApi) {
                                 </div>
 
                                 <div style={{ height: "80%" }}>
-                                    <div style={{ height: "60%" }}>
-                                        <img src="SVG/logo-QMark.svg" alt="" style={{ width: "100%", height: "100%" }} />
+                                    <div style={{ height: "60%", display: "flex", justifyContent: "center", alignItems: "center", overflow: "hidden" }}>
+                                        <img src={selectedFormation.pictures} alt="" style={{ width: "auto", height: "100%" }} />
                                     </div>
                                     <FontAwesomeIcon
                                         icon={faXmark}
@@ -253,11 +255,32 @@ export default function getFormation(linkApi) {
                                         }}
                                     >
                                         <div>{selectedFormation.description}</div>
-                                        <div style={{ boxShadow: "0 0 0 1px", width: "99%", display: "flex", justifyContent: "space-around" }}>
+                                        <div
+                                            style={{
+                                                boxShadow: "0 0 0 1px",
+                                                width: "99%",
+                                                display: "flex",
+                                                flexDirection: "column",
+                                                justifyContent: "space-around",
+                                            }}
+                                        >
                                             {selectedFormation.competences.map((formationCompetences, index) => (
-                                                <p key={index} style={{ width: "300px", boxShadow: "0 0 0 1px", textAlign: "center" }}>
-                                                    {formationCompetences.nom}
-                                                </p>
+                                                <div
+                                                    key={index} // Ajout de la clé ici pour éviter les avertissements de React
+                                                    style={{
+                                                        width: "100%",
+                                                        boxShadow: "0 0 0 1px",
+                                                        textAlign: "center",
+                                                        margin: "30px 0px",
+                                                        padding: "30px 0px",
+                                                    }}
+                                                >
+                                                    <p>{formationCompetences.nom}</p>
+                                                    <p>{formationCompetences.details}</p>
+                                                    {formationCompetences.pic && formationCompetences.pic.trim() !== "" && (
+                                                        <img src={formationCompetences.pic} alt={formationCompetences.pic + "photo"} style={{ width: "50%" }} />
+                                                    )}
+                                                </div>
                                             ))}
                                         </div>
                                         <p>{selectedFormation.enddate}</p>
