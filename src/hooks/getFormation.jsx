@@ -232,7 +232,7 @@ export default function getFormation(linkApi) {
                                     }}
                                 >
                                     <h2 style={{ textAlign: "center", fontSize: "20px" }}>{selectedFormation.title}</h2>
-                                    <p>{selectedFormation.startdate}</p>
+                                    <p style={{ fontSize: "1.2em", marginBottom: "15px" }}>{selectedFormation.startdate}</p>
                                 </div>
 
                                 <div style={{ height: "80%" }}>
@@ -257,7 +257,6 @@ export default function getFormation(linkApi) {
                                         <div>{selectedFormation.description}</div>
                                         <div
                                             style={{
-                                                boxShadow: "0 0 0 1px",
                                                 width: "99%",
                                                 display: "flex",
                                                 flexDirection: "column",
@@ -269,21 +268,25 @@ export default function getFormation(linkApi) {
                                                     key={index} // Ajout de la clé ici pour éviter les avertissements de React
                                                     style={{
                                                         width: "100%",
-                                                        boxShadow: "0 0 0 1px",
+
                                                         textAlign: "center",
                                                         margin: "30px 0px",
                                                         padding: "30px 0px",
                                                     }}
                                                 >
-                                                    <p>{formationCompetences.nom}</p>
-                                                    <p>{formationCompetences.details}</p>
+                                                    <p style={{ fontSize: "1.2em", marginBottom: "15px" }}>{formationCompetences.nom}</p>
+                                                    <p style={{ fontSize: "1.2em", marginBottom: "15px" }}>{formationCompetences.details}</p>
                                                     {formationCompetences.pic && formationCompetences.pic.trim() !== "" && (
-                                                        <img src={formationCompetences.pic} alt={formationCompetences.pic + "photo"} style={{ width: "50%" }} />
+                                                        <img
+                                                            src={formationCompetences.pic}
+                                                            alt={formationCompetences.pic + "photo"}
+                                                            style={{ maxHeight: "500px" }}
+                                                        />
                                                     )}
                                                 </div>
                                             ))}
                                         </div>
-                                        <p>{selectedFormation.enddate}</p>
+                                        <p style={{ fontSize: "1.2em", paddingBottom: "55px" }}>{selectedFormation.enddate}</p>
                                     </div>
                                 </div>
                             </>

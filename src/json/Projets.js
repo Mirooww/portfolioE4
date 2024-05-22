@@ -45,7 +45,7 @@ export const formation = [
                 nom: "Développer la présence en ligne de l’organisation",
                 pic: "/pictures/Projets/ProjPOO/presence.png",
                 details:
-                    "Première réflexion sur les concurents, leur stratégies marketing, et dans le futur comment améliorer notre site internet afin de les concurencer.",
+                    "Première réflexion sur les concurents, leur stratégies marketing, et dans le futur comment améliorer notre site internet afin de les concurencer. Et comment bien se déployer sur internet",
             },
             {
                 nom: "Travailler en mode projet",
@@ -201,7 +201,7 @@ export const formation = [
             {
                 nom: "Développer la présence en ligne de l’organisation",
                 pic: "/pictures/Projets/ProjPOO/presence.png",
-                details: "Réflexion sur les différents conccurents, comment faire mieux qu'eux.",
+                details: "Réflexion sur les différents conccurents, comment faire mieux qu'eux. Et comment bien se déployer sur internet",
             },
             {
                 nom: "Travailler en mode projet",
@@ -232,7 +232,13 @@ export const formation = [
             {
                 nom: "Développer la présence en ligne de l’organisation",
                 pic: "/pictures/Projets/ProjPOO/presence.png",
-                details: "Réflexion sur les différents conccurents, comment faire mieux qu'eux.",
+                details: "Réflexion sur les différents conccurents, comment faire mieux qu'eux. Et comment bien se déployer sur internet",
+            },
+            {
+                nom: "Mettre à disposition des utilisateurs un service informatique",
+                pic: "/pictures/Projets/projBts2/1.png",
+                details:
+                    "Réaliser les tests d’intégration et d’acceptation d’un service                Déployer un service                Accompagner les utilisateurs dans la mise en place d’un service.",
             },
             {
                 nom: "Travailler en mode projet",

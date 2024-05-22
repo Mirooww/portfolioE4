@@ -125,7 +125,7 @@ export default function getStage() {
                             top: "50%",
                             left: "50%",
                             transform: "translate(-50%, -50%)",
-                            backgroundColor: "transparent",
+                            backgroundColor: "rgba(0 0 0 0.4)",
                             padding: "20px",
                             height: "80%",
                             width: "60%",
@@ -140,69 +140,79 @@ export default function getStage() {
                             style={{ position: "absolute", top: "15px", right: "15px", cursor: "pointer" }}
                         />
                         {showModalStage === 1 ? (
-                            <div style={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                                <h1>Pour mon stage chez CIMME SODIMAT</h1>
-                                <p>
+                            <div style={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", padding: "20px" }}>
+                                <h1 style={{ fontSize: "2.5em", marginBottom: "20px" }}>Pour mon stage chez CIMME SODIMAT</h1>
+                                <p style={{ fontSize: "1.2em", marginBottom: "15px" }}>
                                     - Affichage d’information client lors de la réception d’un appel téléphonique avec formulaire pour transmettre un message à
                                     un tiers
                                 </p>
-                                <p>- Interface de conversion de données entrantes au format xml pour mettre à jour une base de données</p>
-                                <p>
+                                <p style={{ fontSize: "1.2em", marginBottom: "15px" }}>
+                                    - Interface de conversion de données entrantes au format xml pour mettre à jour une base de données
+                                </p>
+                                <p style={{ fontSize: "1.2em", marginBottom: "20px" }}>
                                     Grâce à ce stage, j’ai pu découvrir le monde du travail, dans le domaine où je souhaite travailler, et m’a permis de
                                     comprendre les enjeux de chaque entreprise...
                                 </p>
-                                <h2>Voici les réalisations que j'ai pu faire !</h2>
+                                <h2 style={{ fontSize: "2em", marginBottom: "30px" }}>Voici les réalisations que j'ai pu faire !</h2>
                                 <div style={{ width: "70%", padding: "50px 0px" }}>
-                                    <img src="/stage/1er/1.png" alt="realisation premier stage" style={{ width: "100%" }} />
-                                    <p>Soit une interface d'affichage du contenu de la base de donnée</p>
-                                    <p>
+                                    <img src="/stage/1er/1.png" alt="realisation premier stage" style={{ width: "100%", marginBottom: "20px" }} />
+                                    <p style={{ fontSize: "1.2em", marginBottom: "15px" }}>Soit une interface d'affichage du contenu de la base de donnée</p>
+                                    <p style={{ fontSize: "1.2em", marginBottom: "15px" }}>
                                         Mais le plus gros du projet était, de pouvoir insérer un fichier sous format XML afin de mettre à jour cette base de
                                         donnée !
                                     </p>
-                                    <p>
+                                    <p style={{ fontSize: "1.2em", marginBottom: "15px" }}>
                                         Lors du clic sur Import XML un pop-up va s'ouvrir demandant d'insérer un fichier, avec vérification que cela soit bien
                                         un fichier XML
                                     </p>
-                                    <p>
-                                        Et ensuite automatiquement le fichier va être lu, vérifié, et les données nécessitant une mise à jour seront modifiés !{" "}
+                                    <p style={{ fontSize: "1.2em", marginBottom: "15px" }}>
+                                        Et ensuite automatiquement le fichier va être lu, vérifié, et les données nécessitant une mise à jour seront modifiés !
                                     </p>
                                 </div>
-
                                 <div style={{ width: "70%", padding: "50px 0px" }}>
-                                    <img src="/stage/1er/2.png" alt="realisation premier stage" style={{ width: "100%" }} />
-                                    <p>Puis une interface, s'ouvrant automatiquement lors de l'appel d'un client sur le téléphone fixe</p>
-                                    <p>Sur cette interface de nombreuses informations sont affichés !</p>
-                                    <p>Notamment le contact du clients</p>
-                                    <p>Mais également les différents services qu'il a auprés de CIMME SODIMAT</p>
-                                    <p>
+                                    <img src="/stage/1er/2.png" alt="realisation premier stage" style={{ width: "100%", marginBottom: "20px" }} />
+                                    <p style={{ fontSize: "1.2em", marginBottom: "15px" }}>
+                                        Puis une interface, s'ouvrant automatiquement lors de l'appel d'un client sur le téléphone fixe
+                                    </p>
+                                    <p style={{ fontSize: "1.2em", marginBottom: "15px" }}>Sur cette interface de nombreuses informations sont affichés !</p>
+                                    <p style={{ fontSize: "1.2em", marginBottom: "15px" }}>Notamment le contact du clients</p>
+                                    <p style={{ fontSize: "1.2em", marginBottom: "15px" }}>
+                                        Mais également les différents services qu'il a auprés de CIMME SODIMAT
+                                    </p>
+                                    <p style={{ fontSize: "1.2em", marginBottom: "15px" }}>
                                         Cette interface permet égalements lors de l'appel de pouvoir savoir la raison de ses différents appels, et de saisir la
                                         demande du client ET la réponse apporté
                                     </p>
-                                    <p> Facilitant ainsi le dossier de la personne, si un autre conseiller prend le relais ! </p>
-                                    <img src="/stage/1er/3.png" alt="realisation premier stage" style={{ width: "100%" }} />
+                                    <p style={{ fontSize: "1.2em", marginBottom: "15px" }}>
+                                        Facilitant ainsi le dossier de la personne, si un autre conseiller prend le relais !
+                                    </p>
+                                    <img src="/stage/1er/3.png" alt="realisation premier stage" style={{ width: "100%", marginBottom: "20px" }} />
                                 </div>
                             </div>
                         ) : (
-                            <div style={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                                <h1>Pour mon stage chez 0001</h1>
-                                <p>
+                            <div style={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", padding: "20px" }}>
+                                <h1 style={{ fontSize: "2.5em", marginBottom: "20px" }}>Pour mon stage chez 0001</h1>
+                                <p style={{ fontSize: "1.2em", marginBottom: "20px" }}>
                                     - Développement d'une application en React : Votre stagiaire sera responsable de la création d'une interface utilisateur
                                     dynamique en utilisant React. Cela inclut la conception de composants réactifs, la gestion de l'état de l'application, et
                                     l'optimisation des performances front-end.
                                 </p>
-
-                                <h2>Voici la réalisation que j'ai pu faire !</h2>
+                                <h2 style={{ fontSize: "2em", marginBottom: "30px" }}>Voici la réalisation que j'ai pu faire !</h2>
                                 <div style={{ width: "70%", padding: "50px 0px" }}>
-                                    <img src="/stage/2eme/1.png" alt="realisation premier stage" style={{ width: "100%" }} />
-                                    <p>Soit une interface style jeu vidéo pour une association de jeu en grand air !</p>
-                                    <p> L'entreprise TRIBAL, proposant AIRSOFT, ARCHERYTAG, LASERGAME, PAINTBALL</p>
-                                    <p>
+                                    <img src="/stage/2eme/1.png" alt="realisation premier stage" style={{ width: "100%", marginBottom: "20px" }} />
+                                    <p style={{ fontSize: "1.2em", marginBottom: "15px" }}>
+                                        Soit une interface style jeu vidéo pour une association de jeu en grand air !
+                                    </p>
+                                    <p style={{ fontSize: "1.2em", marginBottom: "15px" }}>
+                                        L'entreprise TRIBAL, proposant AIRSOFT, ARCHERYTAG, LASERGAME, PAINTBALL
+                                    </p>
+                                    <p style={{ fontSize: "1.2em", marginBottom: "15px" }}>
                                         Le tour réalisé en ReactJS afin de pouvoir avoir une interface immersive, où lors du clic, un mouvement d'ouverture se
                                         passe, laissant place à un style parallax différent pour chaque jeux sélectionné
                                     </p>
-                                    <img src="/stage/2eme/2.png" alt="realisation premier stage" style={{ width: "100%" }} />
-                                    <p> Où l'utilisateur aura accès à plusieurs choix </p>
-                                    <p>
+                                    <img src="/stage/2eme/2.png" alt="realisation premier stage" style={{ width: "100%", marginBottom: "20px" }} />
+                                    <p style={{ fontSize: "1.2em", marginBottom: "15px" }}>Où l'utilisateur aura accès à plusieurs choix</p>
+                                    <p style={{ fontSize: "1.2em", marginBottom: "15px" }}>
                                         Se renseigner sur le sport sélectionné, avoir des photos, changer entre le mode jour et nuit, contacter TRIBAL, et
                                         bien-sûr réserver
                                     </p>
